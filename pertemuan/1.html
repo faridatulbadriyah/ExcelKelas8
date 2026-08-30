@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#217346" />
+    <title>Pertemuan 1 | Excel Zone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pertemuan.css" />
+</head>
+<body class="lesson-page">
+    <div class="app-shell">
+        <!-- ==================== TOPBAR ==================== -->
+        <header class="topbar">
+            <a class="brand" href="../index.html" aria-label="Kembali ke Excel Zone">
+                <span class="brand-mark" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                </span>
+                <span><strong>Excel</strong> Zone</span>
+            </a>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="../index.html">Dashboard</a>
+                <a class="active" href="#materi">Materi</a>
+                <a href="#aktivitas">Aktivitas</a>
+                <a href="#penggunaan">Penggunaan Excel</a>
+            </nav>
+            <a class="profile-button profile-link" href="../index.html" aria-label="Kembali ke dashboard">Aku</a>
+        </header>
+
+        <main>
+            <!-- ==================== BREADCRUMB ==================== -->
+            <div class="breadcrumb">
+                <a href="../index.html">Dashboard</a>
+                <span>/</span>
+                <span>Pertemuan 1</span>
+            </div>
+
+            <!-- ==================== LESSON HERO ==================== -->
+            <section class="lesson-hero">
+                <div class="lesson-hero-copy">
+                    <span class="lesson-label blue-label">PERTEMUAN 01 · PEMBUKA</span>
+                    <h1>Kenalan dengan <br /><em>Excel</em></h1>
+                    <p>Memahami apa itu Excel, mengenali bagian-bagiannya (termasuk <strong>baris</strong> dan <strong>kolom</strong>), serta mengetahui fungsinya dalam kehidupan sehari-hari.</p>
+                    <div class="lesson-meta">
+                        <span>⏱ 2 × 40 menit</span>
+                        <span>✦ Level pemula</span>
+                        <span>📊 Microsoft Excel</span>
+                    </div>
+                </div>
+                <div class="lesson-art" aria-label="Ilustrasi data spreadsheet">
+                    <div class="art-card art-back"></div>
+                    <div class="art-card art-front">
+                        <div class="art-head">
+                            <span>fx</span>
+                            <b>A1</b>
+                            <span>=SUM(B2:B5)</span>
+                        </div>
+                        <div class="art-row art-title">
+                            <i></i><i></i><i></i><i></i>
+                        </div>
+                        <div class="art-row">
+                            <i></i><i class="fill-green"></i><i class="fill-blue"></i><i></i>
+                        </div>
+                        <div class="art-row">
+                            <i></i><i class="fill-yellow"></i><i></i><i></i>
+                        </div>
+                        <div class="art-row">
+                            <i></i><i class="fill-orange"></i><i class="fill-green"></i><i></i>
+                        </div>
+                        <div class="art-check">✓</div>
+                    </div>
+                    <span class="art-tag">data → insight</span>
+                </div>
+            </section>
+
+            <!-- ==================== MATERI INTI ==================== -->
+            <section class="lesson-layout" id="materi">
+                <div class="main-column">
+                    <!-- Heading -->
+                    <div class="content-heading">
+                        <span class="section-kicker">MATERI INTI</span>
+                        <h2>Excel itu apa, sih?</h2>
+                        <p>
+                            <strong>Microsoft Excel</strong> adalah aplikasi pengolah angka (spreadsheet) yang membantu kita 
+                            menyimpan, menghitung, menganalisis, dan menyajikan data dalam bentuk tabel. 
+                            Excel termasuk dalam paket <strong>Microsoft Office</strong> dan sangat populer digunakan 
+                            di berbagai bidang pekerjaan.
+                        </p>
+                    </div>
+
+                    <!-- 3 Pilar Excel -->
+                    <div class="insight-grid">
+                        <article>
+                            <span class="insight-icon blue-icon">▦</span>
+                            <h3>Terstruktur</h3>
+                            <p>Data tersusun rapi di dalam <strong>baris</strong> dan <strong>kolom</strong> membentuk sel (cell).</p>
+                        </article>
+                        <article>
+                            <span class="insight-icon green-icon">∑</span>
+                            <h3>Otomatis</h3>
+                            <p>Perhitungan dapat dilakukan cepat dengan <strong>rumus</strong> dan <strong>fungsi</strong>.</p>
+                        </article>
+                        <article>
+                            <span class="insight-icon orange-icon">↗</span>
+                            <h3>Bermakna</h3>
+                            <p>Data bisa diubah menjadi <strong>informasi</strong> dan <strong>grafik</strong> yang mudah dipahami.</p>
+                        </article>
+                    </div>
+
+                    <!-- ==================== BAGIAN PENTING EXCEL ==================== -->
+                    <div class="explain-block" id="bagian-excel">
+                        <div class="block-number">01</div>
+                        <div>
+                            <h3>Bagian-bagian Penting di Excel</h3>
+                            <p>Kenali istilah berikut sebelum mulai praktik:</p>
+
+                            <!-- Komponen Excel -->
+                            <div class="excel-components">
+                                <div class="component-item">
+                                    <span class="component-icon">📁</span>
+                                    <div>
+                                        <strong>Workbook</strong>
+                                        <p>File Excel yang dapat berisi banyak <em>sheet</em> (lembar kerja).</p>
+                                    </div>
+                                </div>
+                                <div class="component-item">
+                                    <span class="component-icon">📄</span>
+                                    <div>
+                                        <strong>Worksheet (Sheet)</strong>
+                                        <p>Lembar kerja tempat kita mengolah data. Satu workbook bisa punya banyak sheet.</p>
+                                    </div>
+                                </div>
+                                <div class="component-item">
+                                    <span class="component-icon">⬛</span>
+                                    <div>
+                                        <strong>Cell (Sel)</strong>
+                                        <p>Kotak pertemuan antara <strong>baris</strong> (angka) dan <strong>kolom</strong> (huruf). 
+                                        Contoh: <strong>A1</strong> adalah sel di kolom A dan baris 1.</p>
+                                    </div>
+                                </div>
+                                <div class="component-item">
+                                    <span class="component-icon">↔️</span>
+                                    <div>
+                                        <strong>Baris (Row)</strong>
+                                        <p>Garis horizontal yang diberi nomor <strong>(1, 2, 3, ...)</strong>. 
+                                        Biasanya digunakan untuk menampilkan data per <strong>record</strong> (misal: per siswa).</p>
+                                    </div>
+                                </div>
+                                <div class="component-item">
+                                    <span class="component-icon">↕️</span>
+                                    <div>
+                                        <strong>Kolom (Column)</strong>
+                                        <p>Garis vertikal yang diberi huruf <strong>(A, B, C, ...)</strong>. 
+                                        Biasanya digunakan untuk menampilkan <strong>atribut</strong> data (misal: Nama, Nilai).</p>
+                                    </div>
+                                </div>
+                                <div class="component-item">
+                                    <span class="component-icon">📝</span>
+                                    <div>
+                                        <strong>Formula Bar</strong>
+                                        <p>Tempat melihat atau mengetik isi cell, serta menulis rumus. 
+                                        Contoh: <code>=A1+B1</code> atau <code>=SUM(A1:A10)</code>.</p>
+                                    </div>
+                                </div>
+                                <div class="component-item">
+                                    <span class="component-icon">📊</span>
+                                    <div>
+                                        <strong>Chart / Grafik</strong>
+                                        <p>Visualisasi data dalam bentuk grafik batang, garis, lingkaran, dll.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ilustrasi Baris & Kolom -->
+                            <div class="row-col-illustration">
+                                <h4>📌 Ilustrasi Baris & Kolom</h4>
+                                <div class="table-preview">
+                                    <table class="excel-table">
+                                        <tr>
+                                            <th></th>
+                                            <th>A <small>(Kolom)</small></th>
+                                            <th>B</th>
+                                            <th>C</th>
+                                        </tr>
+                                        <tr>
+                                            <th>1 <small>(Baris)</small></th>
+                                            <td><strong>A1</strong></td>
+                                            <td>B1</td>
+                                            <td>C1</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td>A2</td>
+                                            <td><strong>B2</strong></td>
+                                            <td>C2</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td>A3</td>
+                                            <td>B3</td>
+                                            <td><strong>C3</strong></td>
+                                        </tr>
+                                    </table>
+                                    <p class="table-caption">
+                                        <strong>Cell</strong> adalah pertemuan antara <strong>Baris</strong> dan <strong>Kolom</strong>.
+                                        Contoh: <strong>B2</strong> adalah sel di baris 2 dan kolom B.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== PENGGUNAAN EXCEL ==================== -->
+                    <div class="explain-block" id="penggunaan">
+                        <div class="block-number">02</div>
+                        <div>
+                            <h3>📋 Di Mana Saja Excel Digunakan?</h3>
+                            <p>
+                                Excel sangat serbaguna dan digunakan di hampir semua bidang pekerjaan. 
+                                Yuk, lihat contohnya!
+                            </p>
+
+                            <div class="use-cases-grid">
+                                <div class="use-case">
+                                    <span class="use-icon">🏫</span>
+                                    <h4>Pendidikan</h4>
+                                    <ul>
+                                        <li>Membuat <strong>daftar nilai</strong> siswa</li>
+                                        <li>Membuat <strong>jadwal pelajaran</strong></li>
+                                        <li>Mengolah <strong>data kehadiran</strong></li>
+                                        <li>Membuat <strong>grafik</strong> hasil belajar</li>
+                                    </ul>
+                                </div>
+                                <div class="use-case">
+                                    <span class="use-icon">💰</span>
+                                    <h4>Keuangan & Akuntansi</h4>
+                                    <ul>
+                                        <li>Membuat <strong>laporan keuangan</strong></li>
+                                        <li>Mengelola <strong>anggaran</strong> dan <strong>kas</strong></li>
+                                        <li>Menghitung <strong>gaji</strong> karyawan</li>
+                                        <li>Membuat <strong>faktur</strong> dan <strong>invoice</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="use-case">
+                                    <span class="use-icon">🏢</span>
+                                    <h4>Perkantoran & HRD</h4>
+                                    <ul>
+                                        <li>Membuat <strong>database</strong> karyawan</li>
+                                        <li>Mengelola <strong>absensi</strong> dan <strong>cuti</strong></li>
+                                        <li>Membuat <strong>roster kerja</strong></li>
+                                        <li>Menganalisis <strong>kinerja</strong> tim</li>
+                                    </ul>
+                                </div>
+                                <div class="use-case">
+                                    <span class="use-icon">📈</span>
+                                    <h4>Bisnis & Marketing</h4>
+                                    <ul>
+                                        <li>Mengelola <strong>stok barang</strong> (inventaris)</li>
+                                        <li>Membuat <strong>laporan penjualan</strong></li>
+                                        <li>Menganalisis <strong>data pelanggan</strong></li>
+                                        <li>Membuat <strong>forecasting</strong> penjualan</li>
+                                    </ul>
+                                </div>
+                                <div class="use-case">
+                                    <span class="use-icon">🔬</span>
+                                    <h4>Penelitian & Sains</h4>
+                                    <ul>
+                                        <li>Mengolah <strong>data penelitian</strong></li>
+                                        <li>Membuat <strong>tabel</strong> dan <strong>grafik</strong></li>
+                                        <li>Analisis <strong>statistik</strong> sederhana</li>
+                                        <li>Menyimpan <strong>data eksperimen</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="use-case">
+                                    <span class="use-icon">🏥</span>
+                                    <h4>Kesehatan</h4>
+                                    <ul>
+                                        <li>Mengelola <strong>data pasien</strong></li>
+                                        <li>Membuat <strong>jadwal</strong> dokter/ruangan</li>
+                                        <li>Mencatat <strong>stok obat</strong></li>
+                                        <li>Menganalisis <strong>data kesehatan</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="use-case-summary">
+                                <p>
+                                    💡 <strong>Intinya:</strong> Excel digunakan oleh <strong>hampir semua profesi</strong> 
+                                    yang bekerja dengan data dan angka. Mulai dari <strong>guru, akuntan, manajer, 
+                                    peneliti, marketing, hingga dokter!</strong> 
+                                    Jadi, belajar Excel adalah investasi untuk masa depan! 🚀
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== AKTIVITAS ==================== -->
+                    <div class="practice-panel" id="aktivitas">
+                        <div class="practice-header">
+                            <span class="orange-label">AKTIVITAS 01</span>
+                            <span>Eksplorasi singkat · 10 menit</span>
+                        </div>
+                        <h2>Temukan Excel di Sekitarmu</h2>
+                        <p>
+                            Dari contoh profesi di atas, mana yang menurutmu paling sering menggunakan Excel? 
+                            Pilih jawabanmu untuk mengecek pemahaman.
+                        </p>
+                        <div class="answer-list">
+                            <button data-answer="wrong" type="button">Petani menanam padi</button>
+                            <button data-answer="correct" type="button">Guru membuat nilai siswa</button>
+                            <button data-answer="wrong" type="button">Pelukis membuat lukisan</button>
+                            <button data-answer="wrong" type="button">Atlet berlari di lapangan</button>
+                        </div>
+                        <p class="answer-feedback" id="answerFeedback" aria-live="polite"></p>
+
+                        <div class="reflection-prompt">
+                            <h4>📝 Tugas Refleksi</h4>
+                            <p>
+                                Tulis di buku catatanmu: 
+                                <em>"Sebutkan 3 bidang pekerjaan yang menggunakan Excel dan jelaskan kegunaannya!"</em>
+                            </p>
+                            <div class="example-answer">
+                                <strong>Contoh:</strong>
+                                <ul>
+                                    <li><strong>Guru</strong> → membuat daftar nilai siswa</li>
+                                    <li><strong>Akuntan</strong> → membuat laporan keuangan</li>
+                                    <li><strong>Kasir</strong> → menghitung total belanja</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== SIDEBAR ==================== -->
+                <aside class="lesson-sidebar">
+                    <!-- Progress Card -->
+                    <div class="side-card progress-card">
+                        <div class="side-card-top">
+                            <span class="section-kicker">PROGRESS MATERI</span>
+                            <strong id="lessonProgress">0%</strong>
+                        </div>
+                        <div class="mini-progress">
+                            <div id="lessonProgressBar" style="width: 0%;"></div>
+                        </div>
+                        <div class="check-list">
+                            <!-- data-check harus sesuai dengan yang ada di JS -->
+                            <label>
+                                <input type="checkbox" data-check="materi" />
+                                <span>Baca materi inti</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-check="bagian" />
+                                <span>Pelajari bagian Excel (baris & kolom)</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-check="penggunaan" />
+                                <span>Baca penggunaan Excel di kehidupan</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-check="aktivitas" />
+                                <span>Kerjakan aktivitas</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-check="refleksi" />
+                                <span>Tulis refleksi</span>
+                            </label>
+                        </div>
+                        <button class="complete-lesson" id="completeLesson" type="button">
+                            Tandai selesai <span>✓</span>
+                        </button>
+                    </div>
+
+                    <!-- Resource Card -->
+                    <div class="side-card resource-card">
+                        <span class="section-kicker">SUMBER BELAJAR</span>
+                        <a class="resource-link" href="#" onclick="return false">
+                            <span>▣</span>
+                            <span>
+                                <b>PPT Materi</b>
+                                <small>File akan diisi guru</small>
+                            </span>
+                            <i>↗</i>
+                        </a>
+                        <a class="resource-link" href="#" onclick="return false">
+                            <span>▤</span>
+                            <span>
+                                <b>LKPD Pertemuan 1</b>
+                                <small>File akan diisi guru</small>
+                            </span>
+                            <i>↗</i>
+                        </a>
+                        <a class="resource-link" href="#" onclick="return false">
+                            <span>▶</span>
+                            <span>
+                                <b>Video pengantar</b>
+                                <small>Link akan diisi guru</small>
+                            </span>
+                            <i>↗</i>
+                        </a>
+                        <a class="resource-link" href="#" onclick="return false">
+                            <span>📝</span>
+                            <span>
+                                <b>Kuis Online</b>
+                                <small>Link akan diisi guru</small>
+                            </span>
+                            <i>↗</i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Tip -->
+                    <div class="side-card tip-card">
+                        <span class="section-kicker">💡 TAHUKAH KAMU?</span>
+                        <p>
+                            Excel pertama kali dirilis pada tahun <strong>1985</strong> untuk sistem operasi Macintosh!
+                            Sekarang Excel digunakan oleh lebih dari <strong>750 juta orang</strong> di seluruh dunia.
+                            Wow! 🌍
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- ==================== REFLEKSI ==================== -->
+            <section class="reflection" id="refleksi">
+                <div>
+                    <span class="section-kicker">SEBELUM LANJUT</span>
+                    <h2>Satu hal baru yang kamu tahu hari ini?</h2>
+                </div>
+                <div class="reflection-note">
+                    <span>✎</span>
+                    <p>
+                        Catat jawabanmu di buku atau LKPD. 
+                        Tidak ada jawaban yang terlalu sederhana. 
+                        Setiap pengetahuan baru adalah langkah maju! 🚀
+                    </p>
+                </div>
+            </section>
+
+            <!-- ==================== NAVIGASI ==================== -->
+            <nav class="lesson-navigation" aria-label="Navigasi pertemuan">
+                <a href="../index.html#materi">← Semua pertemuan</a>
+                <a class="next-link" href="../pertemuan/pertemuan2.html">
+                    Pertemuan berikutnya <span>→</span>
+                </a>
+            </nav>
+        </main>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer>
+            <span>Excel Zone · Informatika Kelas VIII</span>
+            <span>Semangat mengolah data ✦</span>
+        </footer>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script src="../js/pertemuan-1.js"></script>
+</body>
+</html>

@@ -1,0 +1,1425 @@
+/* ============================================
+   PERTEMUAN 5 - CSS KHUSUS
+   Materi: Simbol Hitung Excel (+, -, *, /, ^, %)
+   + Latihan Menulis Rumus
+   ============================================ */
+
+/* ==================== HERO ==================== */
+.operator-hero {
+    background: linear-gradient(120deg, #f4f8ff, #fff 68%);
+}
+
+.operator-hero:after {
+    border-color: var(--blue-light);
+}
+
+/* ==================== OPERATOR ART ==================== */
+.operator-art {
+    position: relative;
+    height: 280px;
+    transform: rotate(4deg);
+}
+
+.operator-card {
+    position: absolute;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    font: 700 16px monospace;
+}
+
+.back-card {
+    top: 35px;
+    left: 4%;
+    width: 78%;
+    height: 185px;
+    padding: 22px;
+    background: var(--blue-light);
+    color: var(--blue);
+    transform: rotate(-9deg);
+}
+
+.main-card {
+    top: 5px;
+    left: 12%;
+    width: 78%;
+    height: 220px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    transform: rotate(5deg);
+}
+
+.main-card .formula-label {
+    color: var(--gray-500);
+    font-size: 12px;
+    margin-right: 15px;
+    font-weight: 400;
+}
+
+.main-card>strong {
+    color: var(--green-600);
+    font-size: 15px;
+}
+
+.operator-result {
+    margin-top: 18px;
+    padding: 11px 15px;
+    border: 1px solid var(--green-200);
+    border-radius: 5px;
+    color: var(--green-700);
+    font-size: 26px;
+    background: var(--green-25);
+    width: 105px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* ==================== OPERATOR SYMBOLS ==================== */
+.operator-symbol {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+    animation: floatSymbol 3s ease-in-out infinite;
+}
+
+.symbol-plus {
+    right: 35px;
+    top: 62px;
+    background: var(--green-600);
+    animation-delay: 0s;
+}
+
+.symbol-minus {
+    right: 75px;
+    bottom: 30px;
+    background: var(--blue);
+    animation-delay: 0.6s;
+}
+
+.symbol-times {
+    right: 22px;
+    bottom: 23px;
+    background: var(--orange);
+    animation-delay: 1.2s;
+}
+
+.symbol-divide {
+    right: 116px;
+    bottom: 58px;
+    background: var(--yellow);
+    color: var(--gray-800);
+    animation-delay: 1.8s;
+}
+
+.symbol-pow {
+    right: 145px;
+    top: 55px;
+    background: #9B59B6;
+    animation-delay: 0.3s;
+    font-size: 16px;
+}
+
+.symbol-percent {
+    right: 165px;
+    bottom: 85px;
+    background: #C62828;
+    animation-delay: 2.4s;
+    font-size: 16px;
+}
+
+@keyframes floatSymbol {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.05); }
+}
+
+.operator-tag {
+    position: absolute;
+    bottom: 4px;
+    left: 2%;
+    padding: 8px 12px;
+    border-radius: var(--radius-full);
+    background: #fff;
+    color: var(--orange-dark);
+    font: 600 11px monospace;
+    box-shadow: var(--shadow-sm);
+    transform: rotate(-7deg);
+}
+
+/* ==================== OPERATOR GRID ==================== */
+.operator-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 28px 0 42px;
+}
+
+.operator-grid article {
+    padding: 18px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    transition: var(--transition);
+}
+
+.operator-grid article:hover {
+    border-color: var(--green-300);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.math-icon {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+.green-icon {
+    background: var(--green-50);
+    color: var(--green-600);
+}
+
+.blue-icon {
+    background: var(--blue-light);
+    color: var(--blue);
+}
+
+.orange-icon {
+    background: var(--orange-light);
+    color: var(--orange-dark);
+}
+
+.yellow-icon {
+    background: var(--yellow-light);
+    color: var(--orange-dark);
+}
+
+.purple-icon {
+    background: #F3E8FF;
+    color: #9B59B6;
+}
+
+.operator-grid h3 {
+    font: 700 14px var(--font-display);
+    margin-bottom: 10px;
+    color: var(--gray-900);
+}
+
+.operator-grid code {
+    display: inline-block;
+    background: var(--gray-100);
+    padding: 5px 7px;
+    border-radius: 4px;
+    color: var(--green-700);
+    font: 600 11px monospace;
+}
+
+.operator-grid p {
+    color: var(--gray-600);
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 9px;
+}
+
+/* ==================== FORMULA STEPS ==================== */
+.formula-steps {
+    list-style: none;
+    border-left: 2px solid var(--green-100);
+}
+
+.formula-steps li {
+    display: grid;
+    grid-template-columns: 155px 1fr;
+    gap: 15px;
+    padding: 10px 0 10px 16px;
+    font-size: 12px;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.formula-steps li:last-child {
+    border-bottom: none;
+}
+
+.formula-steps b {
+    color: var(--green-700);
+}
+
+.formula-steps span {
+    color: var(--gray-600);
+}
+
+/* ==================== FORMULA EXAMPLE ==================== */
+.formula-example {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+    padding: 15px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+}
+
+.example-cell {
+    display: grid;
+    gap: 3px;
+    min-width: 55px;
+    padding: 7px 10px;
+    background: #fff;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.example-cell small {
+    color: var(--gray-500);
+    font: 10px monospace;
+}
+
+.example-cell strong {
+    color: var(--gray-800);
+}
+
+.result-cell {
+    border-color: var(--green-400);
+    background: var(--green-25);
+}
+
+.formula-example>span {
+    color: var(--orange);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.formula-example p {
+    flex-basis: 100%;
+    margin: 0 !important;
+    color: var(--gray-600);
+    font-size: 11px !important;
+}
+
+/* ==================== ORDER BLOCK ==================== */
+.order-block {
+    margin-top: 35px;
+}
+
+.order-block h3 {
+    font: 700 18px var(--font-display);
+    color: var(--gray-900);
+    margin-bottom: 4px;
+}
+
+.order-block>p {
+    color: var(--gray-600);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.order-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.order-comparison div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px;
+    align-items: center;
+    padding: 13px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+}
+
+.order-comparison code {
+    display: inline-block;
+    background: #fff;
+    padding: 5px 7px;
+    border-radius: 4px;
+    color: var(--green-700);
+    font: 600 12px monospace;
+}
+
+.order-comparison strong {
+    color: var(--green-600);
+    font-size: 20px;
+}
+
+.order-comparison span {
+    grid-column: 1/-1;
+    color: var(--gray-500);
+    font-size: 10px;
+}
+
+/* ==================== SOAL LATIHAN ==================== */
+.practice-panel code {
+    color: var(--green-200);
+    font-family: monospace;
+}
+
+.answer-list button.correct {
+    background: var(--green-600);
+    border-color: var(--green-300);
+}
+
+.answer-list button.wrong {
+    background: #8d342d;
+    border-color: #8d342d;
+}
+
+.answer-feedback {
+    color: #ffd27a !important;
+}
+
+/* ==================== SECTION KICKER ==================== */
+.lesson-page .section-kicker {
+    margin-bottom: 4px;
+}
+
+/* ==================== TABEL SIMBOL ==================== */
+.symbol-table-wrap {
+    overflow-x: auto;
+    margin: 12px 0 18px;
+}
+
+.symbol-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+}
+
+.symbol-table th,
+.symbol-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--gray-200);
+}
+
+.symbol-table th {
+    background: var(--green-600);
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.symbol-table td {
+    background: white;
+}
+
+.symbol-table td:first-child {
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: var(--green-700);
+}
+
+.symbol-table tr:hover td {
+    background: var(--green-25);
+}
+
+/* ==================== SPREADSHEET SEPERTI EXCEL ASLI ==================== */
+.spreadsheet-container {
+    margin-top: 48px;
+    padding: 28px;
+    background: white;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+}
+
+.spreadsheet-header {
+    margin-bottom: 20px;
+}
+
+.spreadsheet-header h2 {
+    font: 700 24px var(--font-display);
+    color: var(--gray-900);
+    margin: 4px 0 6px;
+}
+
+.spreadsheet-header p {
+    color: var(--gray-600);
+    font-size: 14px;
+}
+
+.spreadsheet-wrapper {
+    overflow-x: auto;
+}
+
+/* ===== TABLE SEPERTI EXCEL ===== */
+.spreadsheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border: 2px solid var(--gray-400);
+    font-family: 'Courier New', monospace;
+}
+
+/* Header kolom (A, B, C, Operasi) */
+.spreadsheet-table th {
+    background: var(--green-600);
+    color: white;
+    padding: 10px 14px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid var(--green-700);
+    min-width: 80px;
+}
+
+.spreadsheet-table th:first-child {
+    min-width: 40px;
+    background: var(--gray-300);
+    color: var(--gray-700);
+    border-color: var(--gray-400);
+}
+
+.spreadsheet-table th:last-child {
+    min-width: 60px;
+    background: var(--gray-300);
+    color: var(--gray-700);
+    border-color: var(--gray-400);
+}
+
+.spreadsheet-table th small {
+    font-weight: 400;
+    font-size: 10px;
+    opacity: 0.8;
+    display: block;
+}
+
+/* Cell data (A dan B) */
+.cell-data {
+    padding: 10px 14px;
+    border: 1px solid var(--gray-300);
+    text-align: center;
+    background: white;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--gray-800);
+    min-width: 70px;
+}
+
+/* Cell untuk rumus (C) */
+.cell-formula-wrap {
+    padding: 4px 6px;
+    border: 1px solid var(--gray-300);
+    background: white;
+    min-width: 180px;
+    position: relative;
+}
+
+.formula-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 2px solid var(--gray-300);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    text-align: left;
+    transition: var(--transition);
+    background: white;
+    color: var(--gray-800);
+    box-sizing: border-box;
+}
+
+.formula-input:focus {
+    outline: none;
+    border-color: var(--green-600);
+    box-shadow: 0 0 0 3px rgba(33, 115, 70, 0.15);
+}
+
+.formula-input::placeholder {
+    color: var(--gray-400);
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.formula-input.correct {
+    border-color: var(--green-600);
+    background: var(--green-25);
+}
+
+.formula-input.wrong {
+    border-color: var(--red);
+    background: #FDE8E8;
+}
+
+/* Hasil di dalam cell yang sama */
+.cell-result {
+    padding: 4px 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-400);
+    text-align: center;
+    min-height: 28px;
+    font-family: 'Courier New', monospace;
+}
+
+.cell-result.has-result {
+    color: var(--green-700);
+}
+
+/* Nomor baris */
+.spreadsheet-table td:first-child {
+    background: var(--gray-200);
+    font-weight: 700;
+    color: var(--gray-600);
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid var(--gray-300);
+    min-width: 35px;
+}
+
+/* Kolom Operasi */
+.operator-cell {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: var(--green-600) !important;
+    text-align: center;
+    border: 1px solid var(--gray-300);
+    padding: 6px 10px;
+    min-width: 50px;
+    background: var(--green-25);
+}
+
+/* Hover effect seperti Excel */
+.spreadsheet-table tr:hover td {
+    background: var(--green-25);
+}
+
+.spreadsheet-table tr:hover td:first-child {
+    background: var(--gray-300);
+}
+
+.spreadsheet-table tr:hover td.operator-cell {
+    background: var(--green-100);
+}
+
+/* ===== KONTROL ===== */
+.spreadsheet-controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+}
+
+.operator-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.operator-selector span {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+}
+
+.operator-selector code {
+    background: var(--gray-200);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--green-700);
+}
+
+.btn-reset,
+.btn-check-all {
+    padding: 8px 20px;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    background: white;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-reset:hover {
+    border-color: var(--red);
+    color: var(--red);
+    background: var(--red-light);
+}
+
+.btn-check-all {
+    border-color: var(--green-600);
+    color: var(--green-600);
+}
+
+.btn-check-all:hover {
+    background: var(--green-600);
+    color: white;
+}
+
+/* ===== TIPS ===== */
+.spreadsheet-tip {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: var(--yellow-light);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--gray-700);
+    border-left: 4px solid var(--yellow);
+    line-height: 1.7;
+}
+
+.spreadsheet-tip strong {
+    color: var(--orange-dark);
+}
+
+.spreadsheet-tip code {
+    background: var(--gray-200);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--green-700);
+}
+
+/* ===== SCORE ===== */
+.score-container {
+    margin-top: 18px;
+    padding: 16px 20px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+}
+
+.score-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.score-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green-600);
+    font-family: var(--font-display);
+}
+
+.score-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    min-width: 100px;
+}
+
+.score-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green-400), var(--green-600));
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+.score-message {
+    font-size: 13px;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+    .spreadsheet-table {
+        font-size: 12px;
+    }
+    
+    .spreadsheet-table th {
+        padding: 6px 10px;
+        font-size: 12px;
+        min-width: 60px;
+    }
+    
+    .cell-data {
+        padding: 6px 10px;
+        font-size: 14px;
+        min-width: 50px;
+    }
+    
+    .cell-formula-wrap {
+        min-width: 140px;
+    }
+    
+    .formula-input {
+        font-size: 12px;
+        padding: 4px 6px;
+        min-width: 100px;
+    }
+    
+    .cell-result {
+        font-size: 14px;
+    }
+    
+    .operator-cell {
+        font-size: 18px !important;
+        min-width: 40px;
+    }
+    
+    .spreadsheet-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .score-container {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .score-bar {
+        min-width: 50px;
+    }
+}
+
+@media (max-width: 520px) {
+    .spreadsheet-container {
+        padding: 14px;
+    }
+    
+    .spreadsheet-table {
+        font-size: 10px;
+    }
+    
+    .spreadsheet-table th {
+        padding: 4px 6px;
+        font-size: 10px;
+        min-width: 40px;
+    }
+    
+    .spreadsheet-table th:first-child {
+        min-width: 25px;
+    }
+    
+    .cell-data {
+        padding: 4px 6px;
+        font-size: 12px;
+        min-width: 35px;
+    }
+    
+    .cell-formula-wrap {
+        min-width: 100px;
+        padding: 2px 4px;
+    }
+    
+    .formula-input {
+        font-size: 10px;
+        padding: 3px 4px;
+        min-width: 70px;
+    }
+    
+    .cell-result {
+        font-size: 12px;
+        min-height: 20px;
+    }
+    
+    .operator-cell {
+        font-size: 16px !important;
+        min-width: 35px;
+        padding: 4px 6px;
+    }
+    
+    .score-value {
+        font-size: 15px;
+    }
+    
+    .btn-reset,
+    .btn-check-all {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+}
+
+/* ===== TIPS ===== */
+.spreadsheet-tip {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: var(--yellow-light);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--gray-700);
+    border-left: 4px solid var(--yellow);
+    line-height: 1.7;
+}
+
+.spreadsheet-tip strong {
+    color: var(--orange-dark);
+}
+
+.spreadsheet-tip code {
+    background: var(--gray-200);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--green-700);
+}
+
+/* ===== SCORE ===== */
+.score-container {
+    margin-top: 18px;
+    padding: 16px 20px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+}
+
+.score-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.score-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green-600);
+    font-family: var(--font-display);
+}
+
+.score-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    min-width: 100px;
+}
+
+.score-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green-400), var(--green-600));
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+.score-message {
+    font-size: 13px;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+    .spreadsheet-table {
+        font-size: 12px;
+    }
+    
+    .spreadsheet-table th {
+        padding: 6px 10px;
+        font-size: 12px;
+        min-width: 60px;
+    }
+    
+    .cell-data {
+        padding: 6px 10px;
+        font-size: 14px;
+        min-width: 50px;
+    }
+    
+    .cell-formula-wrap {
+        min-width: 140px;
+    }
+    
+    .formula-input {
+        font-size: 12px;
+        padding: 4px 6px;
+        min-width: 100px;
+    }
+    
+    .cell-result {
+        font-size: 14px;
+    }
+    
+    .spreadsheet-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .score-container {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .score-bar {
+        min-width: 50px;
+    }
+}
+
+@media (max-width: 520px) {
+    .spreadsheet-container {
+        padding: 14px;
+    }
+    
+    .spreadsheet-table {
+        font-size: 10px;
+    }
+    
+    .spreadsheet-table th {
+        padding: 4px 6px;
+        font-size: 10px;
+        min-width: 40px;
+    }
+    
+    .spreadsheet-table th:first-child {
+        min-width: 25px;
+    }
+    
+    .cell-data {
+        padding: 4px 6px;
+        font-size: 12px;
+        min-width: 35px;
+    }
+    
+    .cell-formula-wrap {
+        min-width: 100px;
+        padding: 2px 4px;
+    }
+    
+    .formula-input {
+        font-size: 10px;
+        padding: 3px 4px;
+        min-width: 70px;
+    }
+    
+    .cell-result {
+        font-size: 12px;
+        min-height: 20px;
+    }
+    
+    .status-cell {
+        font-size: 16px !important;
+        min-width: 35px;
+        padding: 4px 6px;
+    }
+    
+    .score-value {
+        font-size: 15px;
+    }
+    
+    .btn-reset,
+    .btn-check-all {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+}
+
+/* ==================== SCORE CONTAINER ==================== */
+.score-container {
+    margin-top: 18px;
+    padding: 16px 20px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+}
+
+.score-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.score-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green-600);
+    font-family: var(--font-display);
+}
+
+.score-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    min-width: 100px;
+}
+
+.score-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green-400), var(--green-600));
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+.score-message {
+    font-size: 13px;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 800px) {
+    .operator-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .operator-art {
+        max-width: 460px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .lesson-layout {
+        padding-top: 45px;
+    }
+
+    .order-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .symbol-table {
+        font-size: 11px;
+    }
+
+    .symbol-table th,
+    .symbol-table td {
+        padding: 6px 10px;
+    }
+
+    .formula-steps li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 8px 0 8px 12px;
+    }
+
+    .formula-steps b {
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .spreadsheet-table {
+        font-size: 11px;
+    }
+    
+    .spreadsheet-table th {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+    
+    .spreadsheet-table td {
+        padding: 4px 6px;
+    }
+    
+    .formula-input {
+        min-width: 80px;
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+    
+    .spreadsheet-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .score-container {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .score-bar {
+        min-width: 50px;
+    }
+}
+
+@media (max-width: 520px) {
+    .operator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .formula-steps li {
+        display: block;
+        padding: 8px 0 8px 12px;
+    }
+
+    .formula-steps b {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .order-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .operator-art {
+        transform: scale(0.9) rotate(4deg);
+        margin: -10px auto;
+    }
+
+    .operator-result {
+        font-size: 20px;
+        padding: 8px 12px;
+        width: 80px;
+    }
+
+    .operator-symbol {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+
+    .symbol-plus {
+        right: 25px;
+        top: 55px;
+    }
+    .symbol-minus {
+        right: 60px;
+        bottom: 25px;
+    }
+    .symbol-times {
+        right: 15px;
+        bottom: 18px;
+    }
+    .symbol-divide {
+        right: 95px;
+        bottom: 48px;
+    }
+    .symbol-pow {
+        right: 115px;
+        top: 48px;
+        font-size: 13px;
+    }
+    .symbol-percent {
+        right: 130px;
+        bottom: 70px;
+        font-size: 13px;
+    }
+
+    .formula-example {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .example-cell {
+        min-width: 45px;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .formula-example>span {
+        font-size: 16px;
+    }
+
+    .symbol-table {
+        font-size: 10px;
+    }
+
+    .symbol-table th,
+    .symbol-table td {
+        padding: 4px 6px;
+    }
+
+    .main-card {
+        padding: 14px;
+        height: auto;
+        min-height: 170px;
+    }
+
+    .back-card {
+        height: auto;
+        min-height: 140px;
+    }
+
+    .spreadsheet-container {
+        padding: 14px;
+    }
+    
+    .spreadsheet-table {
+        font-size: 10px;
+    }
+    
+    .spreadsheet-table th {
+        padding: 4px 4px;
+        font-size: 9px;
+    }
+    
+    .spreadsheet-table td {
+        padding: 3px 4px;
+    }
+    
+    .spreadsheet-table td:nth-child(2),
+    .spreadsheet-table td:nth-child(3) {
+        font-size: 11px;
+    }
+    
+    .formula-input {
+        min-width: 60px;
+        font-size: 10px;
+        padding: 3px 4px;
+    }
+    
+    .result-cell-custom {
+        font-size: 12px !important;
+    }
+    
+    .status-cell {
+        font-size: 14px !important;
+    }
+    
+    .score-value {
+        font-size: 15px;
+    }
+    
+    .btn-reset,
+    .btn-check-all {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 400px) {
+    .operator-art {
+        transform: scale(0.8) rotate(4deg);
+        height: 220px;
+        margin: -20px auto;
+    }
+
+    .main-card {
+        padding: 10px 12px;
+        min-height: 140px;
+    }
+
+    .back-card {
+        min-height: 120px;
+        padding: 14px;
+    }
+
+    .operator-result {
+        font-size: 18px;
+        padding: 6px 10px;
+        width: 70px;
+        margin-top: 12px;
+    }
+
+    .operator-symbol {
+        width: 24px;
+        height: 24px;
+        font-size: 13px;
+    }
+
+    .symbol-plus {
+        right: 18px;
+        top: 45px;
+    }
+    .symbol-minus {
+        right: 48px;
+        bottom: 18px;
+    }
+    .symbol-times {
+        right: 10px;
+        bottom: 12px;
+    }
+    .symbol-divide {
+        right: 78px;
+        bottom: 38px;
+    }
+    .symbol-pow {
+        right: 95px;
+        top: 40px;
+        font-size: 11px;
+    }
+    .symbol-percent {
+        right: 108px;
+        bottom: 58px;
+        font-size: 11px;
+    }
+
+    .operator-tag {
+        font-size: 8px;
+        padding: 4px 8px;
+        bottom: 0;
+    }
+
+    .main-card .formula-label {
+        font-size: 10px;
+        margin-right: 8px;
+    }
+
+    .main-card>strong {
+        font-size: 12px;
+    }
+
+    .operator-grid article {
+        padding: 12px 14px;
+    }
+
+    .operator-grid h3 {
+        font-size: 13px;
+    }
+
+    .spreadsheet-container {
+        padding: 12px;
+    }
+    
+    .spreadsheet-table {
+        font-size: 9px;
+    }
+    
+    .spreadsheet-table th {
+        padding: 3px 3px;
+        font-size: 8px;
+    }
+    
+    .formula-input {
+        min-width: 50px;
+        font-size: 9px;
+        padding: 2px 3px;
+    }
+    
+    .result-cell-custom {
+        font-size: 10px !important;
+        min-width: 30px;
+    }
+    
+    .status-cell {
+        font-size: 12px !important;
+    }
+
+    .score-container {
+        padding: 12px 14px;
+    }
+    
+    .score-value {
+        font-size: 13px;
+    }
+    
+    .score-message {
+        font-size: 11px;
+    }
+}

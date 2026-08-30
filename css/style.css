@@ -1,0 +1,1456 @@
+/* ============================================
+   EXCEL ZONE - STYLE UTAMA
+   Tema: Excel Green dengan sentuhan modern
+   Font: DM Sans + Manrope
+   ============================================ */
+
+/* ==================== RESET & ROOT ==================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* === Warna Excel === */
+    --green-900: #0F3B2A;
+    --green-800: #185C37;
+    --green-700: #1E7A4A;
+    --green-600: #217346;
+    --green-500: #2E9B62;
+    --green-400: #4DB87A;
+    --green-300: #7CCD9C;
+    --green-200: #A8E0BE;
+    --green-100: #D0EFDF;
+    --green-50: #EAF7F0;
+    --green-25: #F4FAF7;
+
+    /* === Warna Netral === */
+    --gray-900: #1A202C;
+    --gray-800: #2D3748;
+    --gray-700: #4A5568;
+    --gray-600: #718096;
+    --gray-500: #A0AEC0;
+    --gray-400: #CBD5E0;
+    --gray-300: #E2E8F0;
+    --gray-200: #EDF2F7;
+    --gray-100: #F7FAFC;
+
+    /* === Aksen === */
+    --orange: #FF9B00;
+    --orange-light: #FFF2D9;
+    --orange-dark: #CC7C00;
+    --blue: #4472C4;
+    --blue-light: #D9E6FF;
+    --yellow: #FFC000;
+    --yellow-light: #FFF8E0;
+    --red: #E74C3C;
+    --red-light: #FDE8E8;
+
+    /* === Font === */
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* === Shadow === */
+    --shadow-sm: 0 2px 8px rgba(33, 115, 70, 0.08);
+    --shadow-md: 0 4px 20px rgba(33, 115, 70, 0.12);
+    --shadow-lg: 0 8px 40px rgba(33, 115, 70, 0.18);
+    --shadow-xl: 0 16px 60px rgba(33, 115, 70, 0.22);
+
+    /* === Radius === */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+
+    /* === Transisi === */
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== BASE ==================== */
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--gray-100);
+    color: var(--gray-800);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ==================== APP SHELL ==================== */
+.app-shell {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 16px 20px 32px;
+    background: var(--gray-100);
+}
+
+/* ==================== TOPBAR ==================== */
+.topbar {
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 10px 16px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px) saturate(1.4);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: var(--transition);
+}
+
+.topbar.scrolled {
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Brand / Logo */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    letter-spacing: -0.3px;
+}
+
+.brand strong {
+    color: var(--green-600);
+}
+
+/* Brand Mark - Icon Excel Style */
+.brand-mark {
+    display: grid;
+    grid-template-columns: repeat(2, 8px);
+    gap: 3px;
+    padding: 4px;
+    background: var(--green-600);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(33, 115, 70, 0.3);
+}
+
+.brand-mark span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.brand-mark span:nth-child(1) {
+    background: rgba(255, 255, 255, 0.9);
+}
+.brand-mark span:nth-child(4) {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-links a {
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    background: var(--green-50);
+    color: var(--green-600);
+}
+
+.nav-links a.active {
+    background: var(--green-600);
+    color: white;
+    box-shadow: 0 2px 8px rgba(33, 115, 70, 0.25);
+}
+
+.nav-links a.active:hover {
+    background: var(--green-700);
+    transform: translateY(-1px);
+}
+
+/* Profile Button */
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px 6px 10px;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--green-50);
+    color: var(--green-700);
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.profile-button:hover {
+    background: var(--green-100);
+    transform: scale(1.04);
+}
+
+.profile-button span {
+    font-weight: 400;
+    color: var(--gray-500);
+}
+
+.profile-button::before {
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--green-600);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ==================== HERO ==================== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 32px 0 20px;
+    align-items: center;
+}
+
+/* Hero Copy */
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--green-600);
+    background: var(--green-50);
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    width: fit-content;
+}
+
+.hero-copy h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--gray-900);
+    letter-spacing: -1px;
+}
+
+.hero-copy h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--green-600), var(--green-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text {
+    font-size: 17px;
+    color: var(--gray-600);
+    max-width: 460px;
+    line-height: 1.7;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: var(--radius-full);
+    background: var(--green-600);
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(33, 115, 70, 0.3);
+    transition: var(--transition);
+    width: fit-content;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(33, 115, 70, 0.35);
+    background: var(--green-700);
+}
+
+.primary-button span {
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.primary-button:hover span {
+    transform: translateX(4px);
+}
+
+/* Hero Visual - Spreadsheet */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sheet-window {
+    width: 100%;
+    max-width: 440px;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    transition: var(--transition-slow);
+}
+
+.sheet-window:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 24px 80px rgba(33, 115, 70, 0.2);
+}
+
+.sheet-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.traffic {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.traffic.red {
+    background: #FF5F56;
+}
+.traffic.yellow {
+    background: #FFBD2E;
+}
+.traffic.green {
+    background: #27C93F;
+}
+
+.toolbar-line {
+    flex: 1;
+    height: 2px;
+    background: var(--gray-300);
+    margin: 0 10px;
+    border-radius: 2px;
+}
+
+.toolbar-icon {
+    color: var(--gray-500);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sheet-body {
+    padding: 12px 14px 8px;
+}
+
+.sheet-formula {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    background: var(--gray-100);
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+    color: var(--gray-700);
+    margin-bottom: 12px;
+    border: 1px solid var(--gray-200);
+}
+
+.sheet-formula fx {
+    font-weight: 700;
+    color: var(--gray-500);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.sheet-formula span {
+    color: var(--green-600);
+    font-weight: 600;
+}
+
+.sheet-grid {
+    display: grid;
+    grid-template-columns: 28px repeat(3, 1fr);
+    gap: 2px;
+    font-size: 13px;
+}
+
+.sheet-grid .corner {
+    background: var(--gray-200);
+    border-radius: 4px 0 0 0;
+}
+
+.sheet-grid b,
+.sheet-grid strong {
+    font-weight: 600;
+    color: var(--gray-600);
+    padding: 4px 6px;
+    background: var(--gray-100);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+}
+
+.sheet-grid strong {
+    color: var(--gray-700);
+    background: var(--gray-200);
+}
+
+.sheet-grid .row-number {
+    color: var(--gray-400);
+    font-size: 11px;
+    text-align: center;
+    padding: 4px 0;
+    font-weight: 500;
+}
+
+.sheet-grid span {
+    padding: 4px 6px;
+    border-radius: 4px;
+    background: white;
+}
+
+.sheet-grid .number {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: var(--green-600);
+}
+
+.sheet-grid .status-cell {
+    color: var(--green-600);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.sheet-grid strong:last-child {
+    color: var(--green-600);
+    background: var(--green-50);
+}
+
+.sheet-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--gray-100);
+    border-top: 1px solid var(--gray-200);
+    font-size: 12px;
+    color: var(--gray-600);
+}
+
+.sheet-tab .mini-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: var(--green-600);
+    color: white;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.sheet-tab span:last-child {
+    margin-left: auto;
+    font-size: 16px;
+    color: var(--gray-400);
+    cursor: pointer;
+}
+
+/* Floating Notes */
+.float-note {
+    position: absolute;
+    background: white;
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    color: var(--green-600);
+    animation: float 4s ease-in-out infinite;
+}
+
+.note-top {
+    top: -12px;
+    right: -20px;
+    animation-delay: 0s;
+}
+
+.note-bottom {
+    bottom: 20px;
+    left: -30px;
+    font-size: 12px;
+    color: var(--gray-500);
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ==================== PROGRESS SECTION ==================== */
+.progress-section {
+    padding: 20px 0 10px;
+}
+
+.section-kicker {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--green-500);
+    margin-bottom: 4px;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.progress-heading h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.progress-heading p {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: -2px;
+}
+
+.progress-heading strong {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--green-600);
+}
+
+/* Progress Track */
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    position: relative;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    border-radius: var(--radius-full);
+    background: linear-gradient(90deg, var(--green-600), var(--green-400));
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+#progressBar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25));
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--gray-600);
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.progress-meta b {
+    color: var(--gray-900);
+}
+
+#badgeText {
+    font-weight: 500;
+    padding: 2px 12px;
+    background: var(--green-50);
+    border-radius: var(--radius-full);
+    color: var(--green-700);
+    font-size: 13px;
+}
+
+/* ==================== LEARNING SECTION ==================== */
+.learning-section {
+    padding: 32px 0 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.section-header .section-kicker {
+    margin-bottom: 0;
+}
+
+.section-header h2 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.small-button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--gray-200);
+    color: var(--gray-600);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.small-button:hover {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+/* Filter Row */
+.filter-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.filter {
+    padding: 6px 18px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-full);
+    background: white;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter span {
+    background: var(--gray-200);
+    padding: 0 8px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-500);
+    transition: var(--transition);
+}
+
+.filter:hover {
+    border-color: var(--green-300);
+    color: var(--green-600);
+}
+
+.filter.active {
+    border-color: var(--green-600);
+    background: var(--green-50);
+    color: var(--green-600);
+}
+
+.filter.active span {
+    background: var(--green-600);
+    color: white;
+}
+
+/* ==================== LESSON GRID ==================== */
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+/* Lesson Card */
+.lesson-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 18px 18px 14px;
+    border: 2px solid var(--gray-200);
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.lesson-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--green-400);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--green-300);
+}
+
+.lesson-card:hover::before {
+    opacity: 1;
+}
+
+.lesson-card .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.lesson-card .card-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.lesson-card .card-status-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 12px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.status-locked {
+    background: var(--gray-200);
+    color: var(--gray-500);
+}
+.status-progress {
+    background: var(--orange-light);
+    color: var(--orange-dark);
+}
+.status-done {
+    background: var(--green-50);
+    color: var(--green-700);
+}
+
+.lesson-card .card-number {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-400);
+    margin-top: 6px;
+    display: block;
+}
+
+.lesson-card .card-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 4px 0 8px;
+    line-height: 1.3;
+    min-height: 40px;
+}
+
+.lesson-card .card-progress-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.lesson-card .mini-track {
+    flex: 1;
+    height: 4px;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.lesson-card .mini-track .mini-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    background: var(--green-400);
+    transition: width 0.6s ease;
+    width: 0%;
+}
+
+.lesson-card .card-progress-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-500);
+    min-width: 32px;
+    text-align: right;
+}
+
+/* ==================== CLASS BAND ==================== */
+.class-band {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 24px;
+    padding: 28px 32px;
+    margin: 28px 0 12px;
+    background: linear-gradient(135deg, var(--green-900), var(--green-800));
+    border-radius: var(--radius-lg);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.class-band::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+}
+
+.class-band .section-kicker {
+    color: var(--green-300);
+}
+
+.class-band h2 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.class-band h2 span {
+    color: var(--green-300);
+}
+
+.teacher-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.teacher-info p {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--green-300);
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+.teacher-info p:first-child {
+    margin-top: 0;
+}
+
+.teacher-info strong {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.teacher-info span {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.mentor-label {
+    margin-top: 8px !important;
+}
+
+.band-ornament {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.06);
+    align-self: center;
+    letter-spacing: -4px;
+}
+
+.band-ornament span {
+    color: rgba(255, 255, 255, 0.03);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 8px;
+    font-size: 13px;
+    color: var(--gray-500);
+    border-top: 1px solid var(--gray-200);
+    margin-top: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+footer span:last-child {
+    font-weight: 500;
+    color: var(--gray-400);
+}
+
+/* ==================== DIALOG / MODAL ==================== */
+dialog {
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 0;
+    max-width: 800px;
+    width: 92%;
+    background: white;
+    box-shadow: var(--shadow-xl);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0;
+    transition: var(--transition-slow);
+    pointer-events: none;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+dialog[open] {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.dialog-close {
+    position: sticky;
+    top: 12px;
+    float: right;
+    margin: 12px 16px 0 0;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: var(--gray-200);
+    color: var(--gray-600);
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.dialog-close:hover {
+    background: var(--red-light);
+    color: var(--red);
+    transform: rotate(90deg);
+}
+
+#dialogContent {
+    padding: 16px 28px 32px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 20px 0 0;
+    }
+
+    .hero-copy {
+        align-items: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .sheet-window {
+        max-width: 380px;
+    }
+
+    .class-band {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 24px 20px;
+    }
+
+    .teacher-info {
+        align-items: center;
+    }
+
+    .band-ornament {
+        display: none;
+    }
+
+    .float-note {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-shell {
+        padding: 12px 14px 24px;
+    }
+
+    .topbar {
+        padding: 8px 14px;
+        border-radius: var(--radius-md);
+        top: 8px;
+    }
+
+    .brand {
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .brand-mark {
+        grid-template-columns: repeat(2, 6px);
+        gap: 2px;
+        padding: 3px;
+        border-radius: 4px;
+    }
+
+    .brand-mark span {
+        width: 6px;
+        height: 6px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 12px;
+        right: 12px;
+        background: white;
+        padding: 12px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--gray-200);
+        gap: 2px;
+    }
+
+    .nav-links.open a {
+        padding: 10px 16px;
+        width: 100%;
+    }
+
+    .profile-button span {
+        display: none;
+    }
+
+    .profile-button {
+        padding: 6px 10px;
+    }
+
+    .profile-button::before {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .hero-copy h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .primary-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .progress-heading h2 {
+        font-size: 18px;
+    }
+
+    .progress-heading strong {
+        font-size: 22px;
+    }
+
+    .lesson-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .filter-row {
+        gap: 6px;
+    }
+
+    .filter {
+        font-size: 12px;
+        padding: 4px 14px;
+    }
+
+    .filter span {
+        font-size: 10px;
+        padding: 0 6px;
+    }
+
+    .class-band h2 {
+        font-size: 22px;
+    }
+
+    .teacher-info strong {
+        font-size: 15px;
+    }
+
+    dialog {
+        width: 96%;
+        max-height: 92vh;
+    }
+
+    #dialogContent {
+        padding: 12px 16px 20px;
+    }
+
+    .dialog-close {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        margin: 8px 12px 0 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-shell {
+        padding: 8px 10px 16px;
+    }
+
+    .topbar {
+        padding: 6px 10px;
+        border-radius: var(--radius-sm);
+    }
+
+    .brand {
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    .brand-mark {
+        grid-template-columns: repeat(2, 5px);
+        gap: 1.5px;
+        padding: 2.5px;
+    }
+
+    .brand-mark span {
+        width: 5px;
+        height: 5px;
+    }
+
+    .hero-copy h1 {
+        font-size: 1.5rem;
+    }
+
+    .sheet-window {
+        max-width: 100%;
+    }
+
+    .sheet-grid {
+        font-size: 11px;
+        grid-template-columns: 22px repeat(3, 1fr);
+    }
+
+    .sheet-grid b,
+    .sheet-grid strong {
+        font-size: 9px;
+        padding: 2px 4px;
+    }
+
+    .sheet-grid span {
+        padding: 2px 4px;
+    }
+
+    .sheet-grid .row-number {
+        font-size: 9px;
+    }
+
+    .sheet-formula {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
+    .sheet-tab {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+
+    .progress-meta {
+        font-size: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .lesson-card .card-title {
+        font-size: 14px;
+        min-height: 32px;
+    }
+
+    .class-band {
+        padding: 18px 14px;
+        border-radius: var(--radius-md);
+    }
+
+    .class-band h2 {
+        font-size: 18px;
+    }
+
+    .teacher-info {
+        padding: 10px 12px;
+    }
+
+    .teacher-info strong {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 11px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ==================== UTILITIES ==================== */
+/* Scrollbar Kustom */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--green-400);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--green-600);
+}
+
+/* Selection */
+::selection {
+    background: var(--green-600);
+    color: white;
+}
+
+/* Focus */
+:focus-visible {
+    outline: 2px solid var(--green-400);
+    outline-offset: 2px;
+}
+
+/* ==================== ANIMASI MASUK ==================== */
+.lesson-card {
+    opacity: 0;
+    animation: cardIn 0.5s ease forwards;
+}
+
+.lesson-card:nth-child(1) {
+    animation-delay: 0.04s;
+}
+.lesson-card:nth-child(2) {
+    animation-delay: 0.08s;
+}
+.lesson-card:nth-child(3) {
+    animation-delay: 0.12s;
+}
+.lesson-card:nth-child(4) {
+    animation-delay: 0.16s;
+}
+.lesson-card:nth-child(5) {
+    animation-delay: 0.20s;
+}
+.lesson-card:nth-child(6) {
+    animation-delay: 0.24s;
+}
+.lesson-card:nth-child(7) {
+    animation-delay: 0.28s;
+}
+.lesson-card:nth-child(8) {
+    animation-delay: 0.32s;
+}
+.lesson-card:nth-child(9) {
+    animation-delay: 0.36s;
+}
+.lesson-card:nth-child(10) {
+    animation-delay: 0.40s;
+}
+.lesson-card:nth-child(11) {
+    animation-delay: 0.44s;
+}
+.lesson-card:nth-child(12) {
+    animation-delay: 0.48s;
+}
+.lesson-card:nth-child(13) {
+    animation-delay: 0.52s;
+}
+.lesson-card:nth-child(14) {
+    animation-delay: 0.56s;
+}
+.lesson-card:nth-child(15) {
+    animation-delay: 0.60s;
+}
+.lesson-card:nth-child(16) {
+    animation-delay: 0.64s;
+}
+.lesson-card:nth-child(17) {
+    animation-delay: 0.68s;
+}
+.lesson-card:nth-child(18) {
+    animation-delay: 0.72s;
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== BADGE PROGRESS ==================== */
+.badge-bronze {
+    background: #FFF2E6;
+    color: #CD7F32;
+}
+.badge-silver {
+    background: #F0F0F0;
+    color: #A0A0A0;
+}
+.badge-gold {
+    background: #FFF8E0;
+    color: #D4A017;
+}
+.badge-master {
+    background: #F3E8FF;
+    color: #9B59B6;
+}
+
+/* ==================== STATUS COLORS ==================== */
+.text-green {
+    color: var(--green-600);
+}
+.text-orange {
+    color: var(--orange);
+}
+.text-blue {
+    color: var(--blue);
+}
+.text-red {
+    color: var(--red);
+}
+.text-gray {
+    color: var(--gray-500);
+}

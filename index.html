@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#217346" />
+  <title>Excel Zone | Informatika Kelas VIII</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Excel Zone beranda">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span><strong>Excel</strong> Zone</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a class="active" href="#home">Dashboard</a>
+        <a href="#materi">Materi</a>
+        <a href="#tentang">Tentang kelas</a>
+      </nav>
+      <button class="profile-button" id="profileButton" type="button" aria-label="Profil siswa">A<span>ku</span></button>
+    </header>
+
+    <main id="app">
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">INFORMATIKA · KELAS VIII · 2025/2026</p>
+          <h1>Halo, Pejuang<br /><em>Excel!</em></h1>
+          <p class="hero-text">Belajar mengolah data jadi lebih mudah, satu tabel kecil dalam satu waktu.</p>
+          <a class="primary-button" href="#materi">Lanjut belajar <span>→</span></a>
+        </div>
+        <div class="hero-visual" aria-label="Ilustrasi spreadsheet Excel">
+          <div class="sheet-window">
+            <div class="sheet-toolbar"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span><span class="toolbar-line"></span><span class="toolbar-icon">↗</span></div>
+            <div class="sheet-body">
+              <div class="sheet-formula">fx <span>=SUM(B2:B5)</span></div>
+              <div class="sheet-grid">
+                <div class="corner"></div><b>A</b><b>B</b><b>C</b>
+                <span class="row-number">1</span><strong>Nama siswa</strong><strong>Nilai</strong><strong>Status</strong>
+                <span class="row-number">2</span><span>Salma</span><span class="number">92</span><span class="status-cell">Lulus</span>
+                <span class="row-number">3</span><span>Raka</span><span class="number">86</span><span class="status-cell">Lulus</span>
+                <span class="row-number">4</span><span>Dina</span><span class="number">74</span><span class="status-cell">Lulus</span>
+              </div>
+            </div>
+            <div class="sheet-tab"><span class="mini-logo">X</span> Sheet1 <span>＋</span></div>
+          </div>
+          <span class="float-note note-top">=SUM(A1:A4)</span><span class="float-note note-bottom">data → insight</span>
+        </div>
+      </section>
+
+      <section class="progress-section" aria-labelledby="progressTitle">
+        <div class="section-kicker">PERJALANAN BELAJAR</div>
+        <div class="progress-heading"><div><h2 id="progressTitle">Progress kamu</h2><p id="motivation">Setiap langkah kecil membuatmu makin jago.</p></div><strong id="progressPercent">0%</strong></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <div class="progress-meta"><span><b id="completedCount">0</b> dari 18 pertemuan selesai</span><span id="badgeText">Badge berikutnya: Perunggu</span></div>
+      </section>
+
+      <section class="learning-section" id="materi">
+        <div class="section-header"><div><div class="section-kicker">KURIKULUM KELAS VIII</div><h2>Rute belajarmu</h2></div><button class="small-button" id="resetButton" type="button">Reset progress</button></div>
+        <div class="filter-row" role="group" aria-label="Filter pertemuan"><button class="filter active" data-filter="all">Semua <span>18</span></button><button class="filter" data-filter="progress">Sedang belajar</button><button class="filter" data-filter="done">Selesai</button><button class="filter" data-filter="locked">Belum mulai</button></div>
+        <div class="lesson-grid" id="lessonGrid"></div>
+      </section>
+
+      <section class="class-band" id="tentang"><div><div class="section-kicker">KELAS KITA</div><h2>Belajar bareng,<br /><span>bertumbuh bareng.</span></h2></div><div class="teacher-info"><p>Guru pengajar</p><strong>Faridatul Badriyah</strong><span>PPL PPG Calon Guru · Universitas Negeri Malang</span><p class="mentor-label">Guru pamong</p><strong>Ratna Agustyasari, S.Pd.</strong><span>SMP Negeri 18 Malang</span></div><div class="band-ornament">X<span>+</span></div></section>
+    </main>
+    <footer><span>Excel Zone · Informatika Kelas VIII</span><span>Semangat mengolah data ✦</span></footer>
+  </div>
+  <dialog id="lessonDialog"><button class="dialog-close" id="dialogClose" aria-label="Tutup">×</button><div id="dialogContent"></div></dialog>
+  <script src="js/main.js"></script>
+</body>
+</html>

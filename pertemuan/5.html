@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#217346" />
+    <title>Pertemuan 5 | Excel Zone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/pertemuan.css" />
+    <link rel="stylesheet" href="../css/pertemuan-5.css" />
+</head>
+<body class="lesson-page">
+    <div class="app-shell">
+        <!-- ==================== TOPBAR ==================== -->
+        <header class="topbar">
+            <a class="brand" href="../index.html" aria-label="Kembali ke Excel Zone">
+                <span class="brand-mark" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                </span>
+                <span><strong>Excel</strong> Zone</span>
+            </a>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="../index.html">Dashboard</a>
+                <a class="active" href="#materi">Materi</a>
+                <a href="#aktivitas">Aktivitas</a>
+                <a href="#latihan">Latihan</a>
+                <a href="#refleksi">Refleksi</a>
+            </nav>
+            <a class="profile-button profile-link" href="../index.html" aria-label="Kembali ke dashboard">Aku</a>
+        </header>
+
+        <main>
+            <!-- ==================== BREADCRUMB ==================== -->
+            <div class="breadcrumb">
+                <a href="../index.html">Dashboard</a>
+                <span>/</span>
+                <a href="../index.html#materi">Pertemuan</a>
+                <span>/</span>
+                <span>Pertemuan 5</span>
+            </div>
+
+            <!-- ==================== HERO ==================== -->
+            <section class="lesson-hero operator-hero">
+                <div class="lesson-hero-copy">
+                    <span class="lesson-label blue-label">PERTEMUAN 05 · PRAKTIK 03</span>
+                    <h1>Berhitung<br />dengan <em>Excel</em></h1>
+                    <p>Mengenal simbol hitung (+, -, *, /, ^, %) dan menggunakannya untuk membuat perhitungan sederhana di dalam cell.</p>
+                    <div class="lesson-meta">
+                        <span>⏱ 2 × 40 menit</span>
+                        <span>✦ Level pemula</span>
+                        <span>＋ Rumus dasar</span>
+                    </div>
+                </div>
+                <div class="operator-art" aria-label="Ilustrasi simbol hitung Excel">
+                    <div class="operator-card back-card">= A1 + B1</div>
+                    <div class="operator-card main-card">
+                        <span class="formula-label">fx</span>
+                        <strong>= 12 + 8</strong>
+                        <div class="operator-result">20</div>
+                        <div class="operator-symbol symbol-plus">＋</div>
+                        <div class="operator-symbol symbol-minus">−</div>
+                        <div class="operator-symbol symbol-times">×</div>
+                        <div class="operator-symbol symbol-divide">÷</div>
+                        <div class="operator-symbol symbol-pow">^</div>
+                        <div class="operator-symbol symbol-percent">%</div>
+                    </div>
+                    <span class="operator-tag">rumus → hasil</span>
+                </div>
+            </section>
+
+            <!-- ==================== MATERI ==================== -->
+            <section class="lesson-layout" id="materi">
+                <div class="main-column">
+                    <!-- Heading -->
+                    <div class="content-heading">
+                        <span class="section-kicker">MATERI INTI</span>
+                        <h2>Simbol hitung itu apa?</h2>
+                        <p>Simbol hitung adalah tanda yang memberi tahu Excel operasi apa yang harus dilakukan. Setiap rumus di Excel selalu diawali tanda sama dengan <strong>(=)</strong>.</p>
+                    </div>
+
+                    <!-- Operator Grid (6 simbol) -->
+                    <div class="operator-grid">
+                        <article>
+                            <span class="math-icon blue-icon">＋</span>
+                            <h3>Penjumlahan</h3>
+                            <code>=A1+B1</code>
+                            <p>Menambahkan dua nilai atau lebih.</p>
+                        </article>
+                        <article>
+                            <span class="math-icon green-icon">−</span>
+                            <h3>Pengurangan</h3>
+                            <code>=A1-B1</code>
+                            <p>Mengurangi satu nilai dari nilai lain.</p>
+                        </article>
+                        <article>
+                            <span class="math-icon orange-icon">×</span>
+                            <h3>Perkalian</h3>
+                            <code>=A1*B1</code>
+                            <p>Excel memakai tanda bintang untuk kali.</p>
+                        </article>
+                        <article>
+                            <span class="math-icon yellow-icon">÷</span>
+                            <h3>Pembagian</h3>
+                            <code>=A1/B1</code>
+                            <p>Excel memakai garis miring untuk bagi.</p>
+                        </article>
+                        <article>
+                            <span class="math-icon purple-icon">^</span>
+                            <h3>Pemangkatan</h3>
+                            <code>=A1^B1</code>
+                            <p>Memangkatkan angka (contoh: 2^3 = 8).</p>
+                        </article>
+                        <article>
+                            <span class="math-icon" style="background:#FCE4EC;color:#C62828;">%</span>
+                            <h3>Persentase</h3>
+                            <code>=A1*B1%</code>
+                            <p>Menghitung persentase (contoh: 200 * 25% = 50).</p>
+                        </article>
+                    </div>
+
+                    <!-- Tabel Simbol Lengkap -->
+                    <div class="explain-block">
+                        <div class="block-number">📊</div>
+                        <div>
+                            <h3>Daftar Lengkap Simbol Hitung Excel</h3>
+                            <p>Berikut semua simbol hitung yang akan kamu gunakan:</p>
+                            <div class="symbol-table-wrap">
+                                <table class="symbol-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Simbol</th>
+                                            <th>Operasi</th>
+                                            <th>Contoh Rumus</th>
+                                            <th>Hasil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>+</td>
+                                            <td>Penjumlahan</td>
+                                            <td><code>=10+5</code></td>
+                                            <td>15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-</td>
+                                            <td>Pengurangan</td>
+                                            <td><code>=10-5</code></td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>*</td>
+                                            <td>Perkalian</td>
+                                            <td><code>=10*5</code></td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/</td>
+                                            <td>Pembagian</td>
+                                            <td><code>=10/5</code></td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>^</td>
+                                            <td>Pemangkatan</td>
+                                            <td><code>=2^3</code></td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>%</td>
+                                            <td>Persentase</td>
+                                            <td><code>=200*25%</code></td>
+                                            <td>50</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aturan Menulis Rumus -->
+                    <div class="explain-block">
+                        <div class="block-number">01</div>
+                        <div>
+                            <h3>Aturan menulis rumus</h3>
+                            <p>Ikuti tiga langkah kecil ini saat membuat perhitungan:</p>
+                            <ol class="formula-steps">
+                                <li>
+                                    <b>Mulai dengan =</b>
+                                    <span>Tanda sama dengan memberi tahu Excel bahwa kamu sedang menulis rumus.</span>
+                                </li>
+                                <li>
+                                    <b>Pilih cell atau angka</b>
+                                    <span>Gunakan alamat cell seperti <code>A1</code>, atau tulis angka langsung.</span>
+                                </li>
+                                <li>
+                                    <b>Tambahkan simbol hitung</b>
+                                    <span>Hubungkan nilai menggunakan <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>, atau <code>%</code>.</span>
+                                </li>
+                            </ol>
+                            <div class="formula-example">
+                                <div class="example-cell">
+                                    <small>A1</small>
+                                    <strong>12</strong>
+                                </div>
+                                <span>＋</span>
+                                <div class="example-cell">
+                                    <small>B1</small>
+                                    <strong>8</strong>
+                                </div>
+                                <span>＝</span>
+                                <div class="example-cell result-cell">
+                                    <small>C1</small>
+                                    <strong>20</strong>
+                                </div>
+                                <p>Rumus di C1: <code>=A1+B1</code></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Urutan Operasi -->
+                    <div class="explain-block order-block">
+                        <div class="block-number">02</div>
+                        <div>
+                            <h3>Urutan operasi</h3>
+                            <p>Jika ada beberapa simbol hitung, Excel mengerjakan perkalian dan pembagian lebih dahulu, kemudian penjumlahan dan pengurangan. Gunakan tanda kurung agar urutannya jelas.</p>
+                            <div class="order-comparison">
+                                <div>
+                                    <code>=10+5*2</code>
+                                    <strong>20</strong>
+                                    <span>kali lebih dulu</span>
+                                </div>
+                                <div>
+                                    <code>=(10+5)*2</code>
+                                    <strong>30</strong>
+                                    <span>kurung lebih dulu</span>
+                                </div>
+                                <div>
+                                    <code>=2^3+4</code>
+                                    <strong>12</strong>
+                                    <span>pangkat lebih dulu</span>
+                                </div>
+                                <div>
+                                    <code>=(2^3)+4</code>
+                                    <strong>12</strong>
+                                    <span>sama saja dengan kurung</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== AKTIVITAS ==================== -->
+                    <div class="practice-panel" id="aktivitas">
+                        <div class="practice-header">
+                            <span class="orange-label">AKTIVITAS 03</span>
+                            <span>Hitung cepat · 10 menit</span>
+                        </div>
+                        <h2>Berapa hasil rumusnya?</h2>
+                        <p>Perhatikan rumus <code>=15 + 6 * 2</code>. Ingat, perkalian dikerjakan lebih dahulu. Pilih jawaban yang tepat.</p>
+                        <div class="answer-list">
+                            <button data-answer="wrong" type="button">42</button>
+                            <button data-answer="correct" type="button">27</button>
+                            <button data-answer="wrong" type="button">36</button>
+                        </div>
+                        <p class="answer-feedback" id="answerFeedback" aria-live="polite"></p>
+
+                        <!-- Soal Tambahan -->
+                        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <h4 style="color: #fff; font-size: 16px; margin-bottom: 8px;">📝 Latihan Simbol Lainnya</h4>
+                            <p style="color: #bdc9c3; font-size: 13px;">Coba tebak hasil dari rumus berikut:</p>
+                            <div class="answer-list" id="extraQuestions">
+                                <button data-answer-extra="wrong" type="button">=2^3 → 6</button>
+                                <button data-answer-extra="correct" type="button">=2^3 → 8</button>
+                                <button data-answer-extra="wrong" type="button">=2^3 → 9</button>
+                            </div>
+                            <p class="answer-feedback" id="extraFeedback" aria-live="polite"></p>
+                        </div>
+                    </div>
+
+<!-- ==================== LATIHAN SPREADSHEET (SEPERTI EXCEL ASLI) ==================== -->
+                    <div class="spreadsheet-container" id="latihan">
+                        <div class="spreadsheet-header">
+                            <span class="section-kicker">LATIHAN PRAKTIK</span>
+                            <h2>📊 Tulis Rumus di Cell</h2>
+                            <p>Ketikkan rumus langsung di cell <strong>kolom C</strong>! Contoh: <code>=A1+B1</code></p>
+                            <p style="font-size: 13px; color: var(--gray-500);">
+                                💡 Rumus akan otomatis menghitung dan menampilkan hasilnya
+                            </p>
+                        </div>
+
+                        <div class="spreadsheet-wrapper">
+                            <table class="spreadsheet-table" id="spreadsheetTable">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>A</th>
+                                        <th>B</th>
+                                        <th>C <small>(Tulis Rumus)</small></th>
+                                        <th>Operasi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>1</strong></td>
+                                        <td class="cell-data">20</td>
+                                        <td class="cell-data">10</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f1" placeholder="=A1+B1" oninput="checkFormula(1)" />
+                                            <div class="cell-result" id="r1">—</div>
+                                        </td>
+                                        <td class="operator-cell" id="o1">+</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>2</strong></td>
+                                        <td class="cell-data">50</td>
+                                        <td class="cell-data">15</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f2" placeholder="=A2-B2" oninput="checkFormula(2)" />
+                                            <div class="cell-result" id="r2">—</div>
+                                        </td>
+                                        <td class="operator-cell" id="o2">−</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>3</strong></td>
+                                        <td class="cell-data">12</td>
+                                        <td class="cell-data">8</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f3" placeholder="=A3*B3" oninput="checkFormula(3)" />
+                                            <div class="cell-result" id="r3">—</div>
+                                        </td>
+                                        <td class="operator-cell" id="o3">×</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>4</strong></td>
+                                        <td class="cell-data">100</td>
+                                        <td class="cell-data">4</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f4" placeholder="=A4/B4" oninput="checkFormula(4)" />
+                                            <div class="cell-result" id="r4">—</div>
+                                        </td>
+                                        <td class="operator-cell" id="o4">÷</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>5</strong></td>
+                                        <td class="cell-data">3</td>
+                                        <td class="cell-data">2</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f5" placeholder="=A5^B5" oninput="checkFormula(5)" />
+                                            <div class="cell-result" id="r5">—</div>
+                                        </td>
+                                        <td class="operator-cell" id="o5">^</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>6</strong></td>
+                                        <td class="cell-data">200</td>
+                                        <td class="cell-data">25</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f6" placeholder="=A6*B6%" oninput="checkFormula(6)" />
+                                            <div class="cell-result" id="r6">—</div>
+                                        </td>
+                                        <td class="operator-cell" id="o6">%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="spreadsheet-controls">
+                                <div class="operator-selector">
+                                    <span>💡 <strong>Tips:</strong> Tulis rumus di kolom C (mulai dengan <code>=</code>)</span>
+                                </div>
+                                <button class="btn-reset" onclick="resetFormulas()">🔄 Reset Semua</button>
+                                <button class="btn-check-all" onclick="checkAllFormulas()">✅ Periksa Semua</button>
+                            </div>
+                        </div>
+
+                        <div class="spreadsheet-tip">
+                            💡 <strong>Tips:</strong> Tulis rumus di cell kolom C. Contoh: <code>=A1+B1</code> untuk menjumlahkan A1 dan B1.
+                            <br>Simbol yang tersedia: <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>^</code> <code>%</code>
+                        </div>
+
+                        <div class="score-container" id="scoreContainer">
+                            <div class="score-label">Skor Latihan:</div>
+                            <div class="score-value" id="scoreValue">0 / 6</div>
+                            <div class="score-bar">
+                                <div class="score-fill" id="scoreFill"></div>
+                            </div>
+                            <div class="score-message" id="scoreMessage">✍️ Mulai kerjakan latihanmu! Tulis rumus di kolom C!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== SIDEBAR ==================== -->
+                <aside class="lesson-sidebar">
+                    <!-- Progress Card -->
+                    <div class="side-card progress-card">
+                        <div class="side-card-top">
+                            <span class="section-kicker">PROGRESS MATERI</span>
+                            <strong id="lessonProgress">0%</strong>
+                        </div>
+                        <div class="mini-progress">
+                            <div id="lessonProgressBar"></div>
+                        </div>
+                        <div class="check-list">
+                            <label>
+                                <input type="checkbox" data-check="materi" />
+                                <span>Baca materi inti</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-check="simbol" />
+                                <span>Pelajari semua simbol hitung</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-check="aktivitas" />
+                                <span>Kerjakan aktivitas</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-check="latihan" />
+                                <span>Kerjakan latihan rumus</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-check="refleksi" />
+                                <span>Tulis refleksi</span>
+                            </label>
+                        </div>
+                        <button class="complete-lesson" id="completeLesson" type="button">
+                            Tandai selesai <span>✓</span>
+                        </button>
+                    </div>
+
+                    <!-- Resource Card -->
+                    <div class="side-card resource-card">
+                        <span class="section-kicker">SUMBER BELAJAR</span>
+                        <a class="resource-link" href="#" onclick="return false">
+                            <span>▣</span>
+                            <span>
+                                <b>PPT Materi</b>
+                                <small>File akan diisi guru</small>
+                            </span>
+                            <i>↗</i>
+                        </a>
+                        <a class="resource-link" href="#" onclick="return false">
+                            <span>▤</span>
+                            <span>
+                                <b>LKPD Pertemuan 5</b>
+                                <small>File akan diisi guru</small>
+                            </span>
+                            <i>↗</i>
+                        </a>
+                        <a class="resource-link" href="#" onclick="return false">
+                            <span>▶</span>
+                            <span>
+                                <b>Video praktik</b>
+                                <small>Link akan diisi guru</small>
+                            </span>
+                            <i>↗</i>
+                        </a>
+                        <a class="resource-link" href="https://faridatulbadriyah.github.io/quizpraktik3/" target="_blank">
+                            <span>📝</span>
+                            <span>
+                                <b>Kuis Online</b>
+                                <small>Klik untuk mengerjakan kuis</small>
+                            </span>
+                            <i>↗</i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Tip -->
+                    <div class="side-card tip-card">
+                        <span class="section-kicker">💡 TAHUKAH KAMU?</span>
+                        <p>
+                            Simbol <strong>^</strong> (pangkat) sangat berguna untuk menghitung luas, volume, atau pertumbuhan.
+                            Contoh: <code>=2^3</code> = 8, sama dengan 2 × 2 × 2!
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- ==================== REFLEKSI ==================== -->
+            <section class="reflection" id="refleksi">
+                <div>
+                    <span class="section-kicker">SEBELUM LANJUT</span>
+                    <h2>Simbol mana yang paling mudah kamu ingat?</h2>
+                </div>
+                <div class="reflection-note">
+                    <span>✎</span>
+                    <p>Tulis satu contoh rumus menggunakan simbol hitung di buku atau LKPD.</p>
+                </div>
+            </section>
+
+            <!-- ==================== NAVIGASI ==================== -->
+            <nav class="lesson-navigation" aria-label="Navigasi pertemuan">
+                <a href="../index.html#materi">← Semua pertemuan</a>
+                <a class="next-link" href="../pertemuan/pertemuan6.html">
+                    Pertemuan 6 <span>→</span>
+                </a>
+            </nav>
+        </main>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer>
+            <span>Excel Zone · Informatika Kelas VIII</span>
+            <span>Semangat mengolah data ✦</span>
+        </footer>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script src="../js/pertemuan-5.js"></script>
+</body>
+</html>
