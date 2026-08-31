@@ -11,6 +11,186 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/pertemuan.css" />
     <link rel="stylesheet" href="../css/pertemuan-5.css" />
+    <style>
+        /* ============================================
+           PERBAIKAN SPREADSHEET - HEADER KOLOM & BARIS
+           ============================================ */
+        
+        /* Header kolom (A, B, C, D, E, F, G) */
+        .spreadsheet-table .col-header {
+            background: #d6e4e0;
+            color: #1a3a32;
+            font-weight: 700;
+            font-size: 13px;
+            text-align: center;
+            padding: 8px 6px;
+            border: 1px solid #a0b8b2;
+            min-width: 70px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .spreadsheet-table .col-header:first-child {
+            min-width: 40px;
+            background: #c0d0ca;
+        }
+
+        /* Header baris (1, 2, 3, 4, 5) */
+        .spreadsheet-table .row-header {
+            background: #d6e4e0;
+            color: #1a3a32;
+            font-weight: 700;
+            font-size: 13px;
+            text-align: center;
+            padding: 8px 4px;
+            border: 1px solid #a0b8b2;
+            min-width: 35px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Cell data (nilai angka) */
+        .spreadsheet-table .cell-data {
+            padding: 8px 10px;
+            border: 1px solid #c8d6d0;
+            text-align: center;
+            background: white;
+            font-weight: 600;
+            font-size: 15px;
+            color: #1a3a32;
+            min-width: 70px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Cell untuk input rumus */
+        .spreadsheet-table .cell-formula-wrap {
+            padding: 4px 6px;
+            border: 1px solid #c8d6d0;
+            background: white;
+            min-width: 160px;
+            position: relative;
+        }
+
+        .spreadsheet-table .cell-formula-wrap .formula-input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 2px solid #c8d6d0;
+            border-radius: 4px;
+            font-size: 13px;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            text-align: left;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: white;
+            color: #1a3a32;
+            box-sizing: border-box;
+        }
+
+        .spreadsheet-table .cell-formula-wrap .formula-input:focus {
+            outline: none;
+            border-color: #217346;
+            box-shadow: 0 0 0 3px rgba(33, 115, 70, 0.15);
+        }
+
+        .spreadsheet-table .cell-formula-wrap .formula-input::placeholder {
+            color: #a0b8b2;
+            font-weight: 400;
+            font-size: 11px;
+        }
+
+        .spreadsheet-table .cell-formula-wrap .formula-input.correct {
+            border-color: #217346;
+            background: #eaf5ee;
+        }
+
+        .spreadsheet-table .cell-formula-wrap .formula-input.wrong {
+            border-color: #c0392b;
+            background: #fde8e8;
+        }
+
+        /* Hasil di dalam cell */
+        .spreadsheet-table .cell-formula-wrap .cell-result {
+            padding: 4px 8px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #a0b8b2;
+            text-align: center;
+            min-height: 26px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .spreadsheet-table .cell-formula-wrap .cell-result.has-result {
+            color: #217346;
+        }
+
+        /* Hover effect seperti Excel */
+        .spreadsheet-table tbody tr:hover .cell-data {
+            background: #eaf5ee;
+        }
+
+        .spreadsheet-table tbody tr:hover .row-header {
+            background: #b8cec6;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .spreadsheet-table .col-header {
+                font-size: 11px;
+                min-width: 50px;
+                padding: 6px 4px;
+            }
+            .spreadsheet-table .cell-data {
+                font-size: 13px;
+                min-width: 50px;
+                padding: 6px 6px;
+            }
+            .spreadsheet-table .cell-formula-wrap {
+                min-width: 120px;
+            }
+            .spreadsheet-table .cell-formula-wrap .formula-input {
+                font-size: 11px;
+                padding: 4px 6px;
+            }
+            .spreadsheet-table .row-header {
+                font-size: 11px;
+                min-width: 28px;
+                padding: 6px 3px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .spreadsheet-table .col-header {
+                font-size: 9px;
+                min-width: 35px;
+                padding: 4px 3px;
+            }
+            .spreadsheet-table .col-header:first-child {
+                min-width: 25px;
+            }
+            .spreadsheet-table .cell-data {
+                font-size: 11px;
+                min-width: 35px;
+                padding: 4px 4px;
+            }
+            .spreadsheet-table .cell-formula-wrap {
+                min-width: 80px;
+                padding: 2px 4px;
+            }
+            .spreadsheet-table .cell-formula-wrap .formula-input {
+                font-size: 9px;
+                padding: 3px 4px;
+                min-width: 60px;
+            }
+            .spreadsheet-table .cell-formula-wrap .cell-result {
+                font-size: 11px;
+                min-height: 20px;
+                padding: 2px 4px;
+            }
+            .spreadsheet-table .row-header {
+                font-size: 9px;
+                min-width: 22px;
+                padding: 4px 2px;
+            }
+        }
+    </style>
 </head>
 <body class="lesson-page">
     <div class="app-shell">
@@ -25,7 +205,6 @@
             <nav class="nav-links" aria-label="Navigasi utama">
                 <a href="../index.html">Dashboard</a>
                 <a class="active" href="#materi">Materi</a>
-                <a href="#aktivitas">Aktivitas</a>
                 <a href="#latihan">Latihan</a>
                 <a href="#refleksi">Refleksi</a>
             </nav>
@@ -47,7 +226,7 @@
                 <div class="lesson-hero-copy">
                     <span class="lesson-label blue-label">PERTEMUAN 05 · PRAKTIK 03</span>
                     <h1>Berhitung<br />dengan <em>Excel</em></h1>
-                    <p>Mengenal simbol hitung (+, -, *, /, ^, %) dan menggunakannya untuk membuat perhitungan sederhana di dalam cell.</p>
+                    <p>Mengenal simbol hitung (+, -, *, /, ^) dan menggunakannya untuk membuat perhitungan sederhana di dalam cell.</p>
                     <div class="lesson-meta">
                         <span>⏱ 2 × 40 menit</span>
                         <span>✦ Level pemula</span>
@@ -65,7 +244,6 @@
                         <div class="operator-symbol symbol-times">×</div>
                         <div class="operator-symbol symbol-divide">÷</div>
                         <div class="operator-symbol symbol-pow">^</div>
-                        <div class="operator-symbol symbol-percent">%</div>
                     </div>
                     <span class="operator-tag">rumus → hasil</span>
                 </div>
@@ -81,43 +259,37 @@
                         <p>Simbol hitung adalah tanda yang memberi tahu Excel operasi apa yang harus dilakukan. Setiap rumus di Excel selalu diawali tanda sama dengan <strong>(=)</strong>.</p>
                     </div>
 
-                    <!-- Operator Grid (6 simbol) -->
+                    <!-- Operator Grid (5 simbol) -->
                     <div class="operator-grid">
                         <article>
                             <span class="math-icon blue-icon">＋</span>
                             <h3>Penjumlahan</h3>
                             <code>=A1+B1</code>
-                            <p>Menambahkan dua nilai atau lebih.</p>
+                            <p>Menambahkan dua nilai atau lebih menggunakan simbol <strong>+</strong> (tambah).</p>
                         </article>
                         <article>
                             <span class="math-icon green-icon">−</span>
                             <h3>Pengurangan</h3>
                             <code>=A1-B1</code>
-                            <p>Mengurangi satu nilai dari nilai lain.</p>
+                            <p>Mengurangi satu nilai dari nilai lain menggunakan simbol <strong>−</strong> (kurang).</p>
                         </article>
                         <article>
                             <span class="math-icon orange-icon">×</span>
                             <h3>Perkalian</h3>
                             <code>=A1*B1</code>
-                            <p>Excel memakai tanda bintang untuk kali.</p>
+                            <p>Excel memakai tanda <strong>*</strong> (bintang) untuk perkalian.</p>
                         </article>
                         <article>
                             <span class="math-icon yellow-icon">÷</span>
                             <h3>Pembagian</h3>
                             <code>=A1/B1</code>
-                            <p>Excel memakai garis miring untuk bagi.</p>
+                            <p>Excel memakai tanda <strong>/</strong> (garis miring) untuk pembagian.</p>
                         </article>
                         <article>
                             <span class="math-icon purple-icon">^</span>
-                            <h3>Pemangkatan</h3>
+                            <h3>Perpangkatan</h3>
                             <code>=A1^B1</code>
-                            <p>Memangkatkan angka (contoh: 2^3 = 8).</p>
-                        </article>
-                        <article>
-                            <span class="math-icon" style="background:#FCE4EC;color:#C62828;">%</span>
-                            <h3>Persentase</h3>
-                            <code>=A1*B1%</code>
-                            <p>Menghitung persentase (contoh: 200 * 25% = 50).</p>
+                            <p>Memangkatkan angka menggunakan simbol <strong>^</strong> (contoh: 2^3 = 8).</p>
                         </article>
                     </div>
 
@@ -132,47 +304,61 @@
                                     <thead>
                                         <tr>
                                             <th>Simbol</th>
-                                            <th>Operasi</th>
+                                            <th>Nama</th>
+                                            <th>Fungsi</th>
                                             <th>Contoh Rumus</th>
                                             <th>Hasil</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td>=</td>
+                                            <td>Sama dengan</td>
+                                            <td>Memulai rumus</td>
+                                            <td><code>=10+5</code></td>
+                                            <td>15</td>
+                                        </tr>
+                                        <tr>
                                             <td>+</td>
+                                            <td>Tambah</td>
                                             <td>Penjumlahan</td>
                                             <td><code>=10+5</code></td>
                                             <td>15</td>
                                         </tr>
                                         <tr>
-                                            <td>-</td>
+                                            <td>−</td>
+                                            <td>Kurang</td>
                                             <td>Pengurangan</td>
                                             <td><code>=10-5</code></td>
                                             <td>5</td>
                                         </tr>
                                         <tr>
                                             <td>*</td>
+                                            <td>Bintang</td>
                                             <td>Perkalian</td>
                                             <td><code>=10*5</code></td>
                                             <td>50</td>
                                         </tr>
                                         <tr>
                                             <td>/</td>
+                                            <td>Garis miring</td>
                                             <td>Pembagian</td>
                                             <td><code>=10/5</code></td>
                                             <td>2</td>
                                         </tr>
                                         <tr>
                                             <td>^</td>
-                                            <td>Pemangkatan</td>
+                                            <td>Pangkat</td>
+                                            <td>Perpangkatan</td>
                                             <td><code>=2^3</code></td>
                                             <td>8</td>
                                         </tr>
                                         <tr>
-                                            <td>%</td>
-                                            <td>Persentase</td>
-                                            <td><code>=200*25%</code></td>
-                                            <td>50</td>
+                                            <td>( )</td>
+                                            <td>Kurung</td>
+                                            <td>Mengatur urutan operasi</td>
+                                            <td><code>=(10+5)*2</code></td>
+                                            <td>30</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -197,7 +383,7 @@
                                 </li>
                                 <li>
                                     <b>Tambahkan simbol hitung</b>
-                                    <span>Hubungkan nilai menggunakan <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>, atau <code>%</code>.</span>
+                                    <span>Hubungkan nilai menggunakan <code>+</code>, <code>−</code>, <code>*</code>, <code>/</code>, atau <code>^</code>.</span>
                                 </li>
                             </ol>
                             <div class="formula-example">
@@ -225,7 +411,7 @@
                         <div class="block-number">02</div>
                         <div>
                             <h3>Urutan operasi</h3>
-                            <p>Jika ada beberapa simbol hitung, Excel mengerjakan perkalian dan pembagian lebih dahulu, kemudian penjumlahan dan pengurangan. Gunakan tanda kurung agar urutannya jelas.</p>
+                            <p>Jika ada beberapa simbol hitung, Excel mengerjakan perkalian dan pembagian lebih dahulu, kemudian penjumlahan dan pengurangan. Gunakan tanda kurung <strong>( )</strong> agar urutannya jelas.</p>
                             <div class="order-comparison">
                                 <div>
                                     <code>=10+5*2</code>
@@ -251,42 +437,14 @@
                         </div>
                     </div>
 
-                    <!-- ==================== AKTIVITAS ==================== -->
-                    <div class="practice-panel" id="aktivitas">
-                        <div class="practice-header">
-                            <span class="orange-label">AKTIVITAS 03</span>
-                            <span>Hitung cepat · 10 menit</span>
-                        </div>
-                        <h2>Berapa hasil rumusnya?</h2>
-                        <p>Perhatikan rumus <code>=15 + 6 * 2</code>. Ingat, perkalian dikerjakan lebih dahulu. Pilih jawaban yang tepat.</p>
-                        <div class="answer-list">
-                            <button data-answer="wrong" type="button">42</button>
-                            <button data-answer="correct" type="button">27</button>
-                            <button data-answer="wrong" type="button">36</button>
-                        </div>
-                        <p class="answer-feedback" id="answerFeedback" aria-live="polite"></p>
-
-                        <!-- Soal Tambahan -->
-                        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                            <h4 style="color: #fff; font-size: 16px; margin-bottom: 8px;">📝 Latihan Simbol Lainnya</h4>
-                            <p style="color: #bdc9c3; font-size: 13px;">Coba tebak hasil dari rumus berikut:</p>
-                            <div class="answer-list" id="extraQuestions">
-                                <button data-answer-extra="wrong" type="button">=2^3 → 6</button>
-                                <button data-answer-extra="correct" type="button">=2^3 → 8</button>
-                                <button data-answer-extra="wrong" type="button">=2^3 → 9</button>
-                            </div>
-                            <p class="answer-feedback" id="extraFeedback" aria-live="polite"></p>
-                        </div>
-                    </div>
-
-<!-- ==================== LATIHAN SPREADSHEET (SEPERTI EXCEL ASLI) ==================== -->
+                    <!-- ==================== LATIHAN SPREADSHEET (TABEL SEPERTI EXCEL) ==================== -->
                     <div class="spreadsheet-container" id="latihan">
                         <div class="spreadsheet-header">
                             <span class="section-kicker">LATIHAN PRAKTIK</span>
-                            <h2>📊 Tulis Rumus di Cell</h2>
-                            <p>Ketikkan rumus langsung di cell <strong>kolom C</strong>! Contoh: <code>=A1+B1</code></p>
+                            <h2>📊 Latihan Menulis Rumus</h2>
+                            <p>Isi kolom <strong>Penjumlahan, Pengurangan, Perkalian, Pembagian, Perpangkatan</strong> dengan rumus yang tepat!</p>
                             <p style="font-size: 13px; color: var(--gray-500);">
-                                💡 Rumus akan otomatis menghitung dan menampilkan hasilnya
+                                💡 Tulis rumus di cell dengan diawali <code>=</code> dan gunakan referensi cell (misal: <code>=A2+B2</code>)
                             </p>
                         </div>
 
@@ -294,80 +452,165 @@
                             <table class="spreadsheet-table" id="spreadsheetTable">
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th>A</th>
-                                        <th>B</th>
-                                        <th>C <small>(Tulis Rumus)</small></th>
-                                        <th>Operasi</th>
+                                        <!-- Header kolom: kosong untuk baris header, lalu A, B, C, D, E, F, G -->
+                                        <th class="col-header"></th>
+                                        <th class="col-header">A</th>
+                                        <th class="col-header">B</th>
+                                        <th class="col-header">C</th>
+                                        <th class="col-header">D</th>
+                                        <th class="col-header">E</th>
+                                        <th class="col-header">F</th>
+                                        <th class="col-header">G</th>
+                                    </tr>
+                                    <tr>
+                                        <!-- Header kolom kedua: No, Angka 1, Angka 2, Penjumlahan, dst -->
+                                        <th class="col-header" style="background:#c0d0ca;">No</th>
+                                        <th class="col-header">Angka 1</th>
+                                        <th class="col-header">Angka 2</th>
+                                        <th class="col-header">Penjumlahan <small>+</small></th>
+                                        <th class="col-header">Pengurangan <small>−</small></th>
+                                        <th class="col-header">Perkalian <small>*</small></th>
+                                        <th class="col-header">Pembagian <small>/</small></th>
+                                        <th class="col-header">Perpangkatan <small>^</small></th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Baris 1 -->
                                     <tr>
-                                        <td><strong>1</strong></td>
-                                        <td class="cell-data">20</td>
-                                        <td class="cell-data">10</td>
-                                        <td class="cell-formula-wrap">
-                                            <input type="text" class="formula-input" id="f1" placeholder="=A1+B1" oninput="checkFormula(1)" />
-                                            <div class="cell-result" id="r1">—</div>
-                                        </td>
-                                        <td class="operator-cell" id="o1">+</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>2</strong></td>
-                                        <td class="cell-data">50</td>
-                                        <td class="cell-data">15</td>
-                                        <td class="cell-formula-wrap">
-                                            <input type="text" class="formula-input" id="f2" placeholder="=A2-B2" oninput="checkFormula(2)" />
-                                            <div class="cell-result" id="r2">—</div>
-                                        </td>
-                                        <td class="operator-cell" id="o2">−</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>3</strong></td>
-                                        <td class="cell-data">12</td>
-                                        <td class="cell-data">8</td>
-                                        <td class="cell-formula-wrap">
-                                            <input type="text" class="formula-input" id="f3" placeholder="=A3*B3" oninput="checkFormula(3)" />
-                                            <div class="cell-result" id="r3">—</div>
-                                        </td>
-                                        <td class="operator-cell" id="o3">×</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>4</strong></td>
-                                        <td class="cell-data">100</td>
-                                        <td class="cell-data">4</td>
-                                        <td class="cell-formula-wrap">
-                                            <input type="text" class="formula-input" id="f4" placeholder="=A4/B4" oninput="checkFormula(4)" />
-                                            <div class="cell-result" id="r4">—</div>
-                                        </td>
-                                        <td class="operator-cell" id="o4">÷</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>5</strong></td>
-                                        <td class="cell-data">3</td>
-                                        <td class="cell-data">2</td>
-                                        <td class="cell-formula-wrap">
-                                            <input type="text" class="formula-input" id="f5" placeholder="=A5^B5" oninput="checkFormula(5)" />
-                                            <div class="cell-result" id="r5">—</div>
-                                        </td>
-                                        <td class="operator-cell" id="o5">^</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>6</strong></td>
-                                        <td class="cell-data">200</td>
+                                        <td class="row-header">1</td>
+                                        <td class="cell-data">25</td>
                                         <td class="cell-data">25</td>
                                         <td class="cell-formula-wrap">
-                                            <input type="text" class="formula-input" id="f6" placeholder="=A6*B6%" oninput="checkFormula(6)" />
-                                            <div class="cell-result" id="r6">—</div>
+                                            <input type="text" class="formula-input" id="f1_plus" placeholder="=A1+B1" oninput="checkFormula(1, 'plus')" />
+                                            <div class="cell-result" id="r1_plus">—</div>
                                         </td>
-                                        <td class="operator-cell" id="o6">%</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f1_minus" placeholder="=A1-B1" oninput="checkFormula(1, 'minus')" />
+                                            <div class="cell-result" id="r1_minus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f1_times" placeholder="=A1*B1" oninput="checkFormula(1, 'times')" />
+                                            <div class="cell-result" id="r1_times">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f1_divide" placeholder="=A1/B1" oninput="checkFormula(1, 'divide')" />
+                                            <div class="cell-result" id="r1_divide">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f1_pow" placeholder="=A1^B1" oninput="checkFormula(1, 'pow')" />
+                                            <div class="cell-result" id="r1_pow">—</div>
+                                        </td>
+                                    </tr>
+                                    <!-- Baris 2 -->
+                                    <tr>
+                                        <td class="row-header">2</td>
+                                        <td class="cell-data">240</td>
+                                        <td class="cell-data">12</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f2_plus" placeholder="=A2+B2" oninput="checkFormula(2, 'plus')" />
+                                            <div class="cell-result" id="r2_plus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f2_minus" placeholder="=A2-B2" oninput="checkFormula(2, 'minus')" />
+                                            <div class="cell-result" id="r2_minus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f2_times" placeholder="=A2*B2" oninput="checkFormula(2, 'times')" />
+                                            <div class="cell-result" id="r2_times">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f2_divide" placeholder="=A2/B2" oninput="checkFormula(2, 'divide')" />
+                                            <div class="cell-result" id="r2_divide">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f2_pow" placeholder="=A2^B2" oninput="checkFormula(2, 'pow')" />
+                                            <div class="cell-result" id="r2_pow">—</div>
+                                        </td>
+                                    </tr>
+                                    <!-- Baris 3 -->
+                                    <tr>
+                                        <td class="row-header">3</td>
+                                        <td class="cell-data">360</td>
+                                        <td class="cell-data">18</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f3_plus" placeholder="=A3+B3" oninput="checkFormula(3, 'plus')" />
+                                            <div class="cell-result" id="r3_plus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f3_minus" placeholder="=A3-B3" oninput="checkFormula(3, 'minus')" />
+                                            <div class="cell-result" id="r3_minus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f3_times" placeholder="=A3*B3" oninput="checkFormula(3, 'times')" />
+                                            <div class="cell-result" id="r3_times">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f3_divide" placeholder="=A3/B3" oninput="checkFormula(3, 'divide')" />
+                                            <div class="cell-result" id="r3_divide">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f3_pow" placeholder="=A3^B3" oninput="checkFormula(3, 'pow')" />
+                                            <div class="cell-result" id="r3_pow">—</div>
+                                        </td>
+                                    </tr>
+                                    <!-- Baris 4 -->
+                                    <tr>
+                                        <td class="row-header">4</td>
+                                        <td class="cell-data">500</td>
+                                        <td class="cell-data">20</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f4_plus" placeholder="=A4+B4" oninput="checkFormula(4, 'plus')" />
+                                            <div class="cell-result" id="r4_plus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f4_minus" placeholder="=A4-B4" oninput="checkFormula(4, 'minus')" />
+                                            <div class="cell-result" id="r4_minus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f4_times" placeholder="=A4*B4" oninput="checkFormula(4, 'times')" />
+                                            <div class="cell-result" id="r4_times">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f4_divide" placeholder="=A4/B4" oninput="checkFormula(4, 'divide')" />
+                                            <div class="cell-result" id="r4_divide">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f4_pow" placeholder="=A4^B4" oninput="checkFormula(4, 'pow')" />
+                                            <div class="cell-result" id="r4_pow">—</div>
+                                        </td>
+                                    </tr>
+                                    <!-- Baris 5 -->
+                                    <tr>
+                                        <td class="row-header">5</td>
+                                        <td class="cell-data">144</td>
+                                        <td class="cell-data">12</td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f5_plus" placeholder="=A5+B5" oninput="checkFormula(5, 'plus')" />
+                                            <div class="cell-result" id="r5_plus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f5_minus" placeholder="=A5-B5" oninput="checkFormula(5, 'minus')" />
+                                            <div class="cell-result" id="r5_minus">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f5_times" placeholder="=A5*B5" oninput="checkFormula(5, 'times')" />
+                                            <div class="cell-result" id="r5_times">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f5_divide" placeholder="=A5/B5" oninput="checkFormula(5, 'divide')" />
+                                            <div class="cell-result" id="r5_divide">—</div>
+                                        </td>
+                                        <td class="cell-formula-wrap">
+                                            <input type="text" class="formula-input" id="f5_pow" placeholder="=A5^B5" oninput="checkFormula(5, 'pow')" />
+                                            <div class="cell-result" id="r5_pow">—</div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
 
                             <div class="spreadsheet-controls">
                                 <div class="operator-selector">
-                                    <span>💡 <strong>Tips:</strong> Tulis rumus di kolom C (mulai dengan <code>=</code>)</span>
+                                    <span>💡 <strong>Tips:</strong> Tulis rumus dengan diawali <code>=</code> dan gunakan referensi cell</span>
                                 </div>
                                 <button class="btn-reset" onclick="resetFormulas()">🔄 Reset Semua</button>
                                 <button class="btn-check-all" onclick="checkAllFormulas()">✅ Periksa Semua</button>
@@ -375,17 +618,17 @@
                         </div>
 
                         <div class="spreadsheet-tip">
-                            💡 <strong>Tips:</strong> Tulis rumus di cell kolom C. Contoh: <code>=A1+B1</code> untuk menjumlahkan A1 dan B1.
-                            <br>Simbol yang tersedia: <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>^</code> <code>%</code>
+                            💡 <strong>Tips:</strong> Tulis rumus di cell kolom yang sesuai. Contoh: <code>=A1+B1</code> untuk penjumlahan.
+                            <br>Simbol yang tersedia: <code>=</code> <code>+</code> <code>−</code> <code>*</code> <code>/</code> <code>^</code> <code>( )</code>
                         </div>
 
                         <div class="score-container" id="scoreContainer">
                             <div class="score-label">Skor Latihan:</div>
-                            <div class="score-value" id="scoreValue">0 / 6</div>
+                            <div class="score-value" id="scoreValue">0 / 25</div>
                             <div class="score-bar">
                                 <div class="score-fill" id="scoreFill"></div>
                             </div>
-                            <div class="score-message" id="scoreMessage">✍️ Mulai kerjakan latihanmu! Tulis rumus di kolom C!</div>
+                            <div class="score-message" id="scoreMessage">✍️ Mulai kerjakan latihanmu! Tulis rumus di setiap kolom!</div>
                         </div>
                     </div>
                 </div>
@@ -409,10 +652,6 @@
                             <label>
                                 <input type="checkbox" data-check="simbol" />
                                 <span>Pelajari semua simbol hitung</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" data-check="aktivitas" />
-                                <span>Kerjakan aktivitas</span>
                             </label>
                             <label>
                                 <input type="checkbox" data-check="latihan" />
@@ -505,6 +744,215 @@
     </div>
 
     <!-- ==================== JAVASCRIPT ==================== -->
-    <script src="../js/pertemuan-5.js"></script>
+    <script>
+    // ============================================================
+    // DATA JAWABAN YANG BENAR
+    // ============================================================
+    const correctAnswers = {
+        1: { plus: 50, minus: 0, times: 625, divide: 1, pow: 8881784197001252 },
+        2: { plus: 252, minus: 228, times: 2880, divide: 20, pow: 3833759992447472175126 },
+        3: { plus: 378, minus: 342, times: 6480, divide: 20, pow: 1.063876981e+46 },
+        4: { plus: 520, minus: 480, times: 10000, divide: 25, pow: 9.5367431640625e+64 },
+        5: { plus: 156, minus: 132, times: 1728, divide: 12, pow: 8.916100448256e+307 }
+    };
+
+    let score = 0;
+    let totalCells = 25; // 5 baris × 5 kolom operasi
+
+    // ============================================================
+    // FUNGSI CEK FORMULA
+    // ============================================================
+    function checkFormula(row, operation) {
+        const input = document.getElementById(`f${row}_${operation}`);
+        const resultEl = document.getElementById(`r${row}_${operation}`);
+        const val = input.value.trim();
+
+        // Ambil nilai Angka 1 dan Angka 2 dari tabel
+        const rowEl = input.closest('tr');
+        const cells = rowEl.querySelectorAll('.cell-data');
+        const num1 = parseInt(cells[0].textContent);
+        const num2 = parseInt(cells[1].textContent);
+
+        // Cek apakah rumus diawali dengan "="
+        if (!val.startsWith('=')) {
+            resultEl.textContent = '⚠️';
+            resultEl.style.color = '#e67e22';
+            input.className = 'formula-input';
+            updateScore();
+            return;
+        }
+
+        // Coba evaluasi rumus
+        try {
+            // Ganti referensi cell dengan nilai sebenarnya
+            let formula = val.substring(1); // hilangkan "="
+            // Ganti A1, B1, A2, B2, dst dengan nilai
+            formula = formula.replace(/A(\d+)/g, (match, num) => {
+                const rowNum = parseInt(num);
+                const rowData = document.querySelector(`#spreadsheetTable tbody tr:nth-child(${rowNum})`);
+                if (rowData) {
+                    const dataCells = rowData.querySelectorAll('.cell-data');
+                    return dataCells[0]?.textContent || '0';
+                }
+                return '0';
+            });
+            formula = formula.replace(/B(\d+)/g, (match, num) => {
+                const rowNum = parseInt(num);
+                const rowData = document.querySelector(`#spreadsheetTable tbody tr:nth-child(${rowNum})`);
+                if (rowData) {
+                    const dataCells = rowData.querySelectorAll('.cell-data');
+                    return dataCells[1]?.textContent || '0';
+                }
+                return '0';
+            });
+
+            // Evaluasi formula dengan aman
+            const result = Function(`"use strict"; return (${formula})`)();
+            
+            // Cek apakah hasil sesuai dengan jawaban yang benar
+            const expected = correctAnswers[row][operation];
+            const isCorrect = Math.abs(result - expected) < 0.001;
+
+            if (isCorrect) {
+                resultEl.textContent = result;
+                resultEl.style.color = '#217346';
+                input.className = 'formula-input correct';
+            } else {
+                resultEl.textContent = result;
+                resultEl.style.color = '#c0392b';
+                input.className = 'formula-input wrong';
+            }
+        } catch (e) {
+            resultEl.textContent = '❌';
+            resultEl.style.color = '#c0392b';
+            input.className = 'formula-input wrong';
+        }
+
+        updateScore();
+    }
+
+    // ============================================================
+    // FUNGSI UPDATE SKOR
+    // ============================================================
+    function updateScore() {
+        let correct = 0;
+        let total = 0;
+
+        for (let row = 1; row <= 5; row++) {
+            const operations = ['plus', 'minus', 'times', 'divide', 'pow'];
+            operations.forEach(op => {
+                const input = document.getElementById(`f${row}_${op}`);
+                if (input) {
+                    total++;
+                    if (input.className.includes('correct')) {
+                        correct++;
+                    }
+                }
+            });
+        }
+
+        score = correct;
+        totalCells = total;
+
+        document.getElementById('scoreValue').textContent = `${score} / ${totalCells}`;
+        const fill = document.getElementById('scoreFill');
+        const percentage = totalCells > 0 ? (score / totalCells) * 100 : 0;
+        fill.style.width = `${percentage}%`;
+
+        const msg = document.getElementById('scoreMessage');
+        if (score === totalCells) {
+            msg.textContent = '🎉 Selamat! Semua rumus benar! Hebat!';
+            msg.style.color = '#217346';
+        } else if (score > totalCells * 0.7) {
+            msg.textContent = '👍 Bagus! Lanjutkan! Perbaiki yang masih salah.';
+            msg.style.color = '#f39c12';
+        } else if (score > 0) {
+            msg.textContent = '✍️ Kerjakan lagi! Perhatikan rumus dan simbol yang digunakan.';
+            msg.style.color = '#e67e22';
+        } else {
+            msg.textContent = '✍️ Mulai kerjakan latihanmu! Tulis rumus di setiap kolom!';
+            msg.style.color = 'var(--gray-500)';
+        }
+
+        // Update progress sidebar
+        updateSidebarProgress();
+    }
+
+    // ============================================================
+    // FUNGSI RESET
+    // ============================================================
+    function resetFormulas() {
+        for (let row = 1; row <= 5; row++) {
+            const operations = ['plus', 'minus', 'times', 'divide', 'pow'];
+            operations.forEach(op => {
+                const input = document.getElementById(`f${row}_${op}`);
+                const result = document.getElementById(`r${row}_${op}`);
+                if (input) {
+                    input.value = '';
+                    input.className = 'formula-input';
+                }
+                if (result) {
+                    result.textContent = '—';
+                    result.style.color = 'var(--gray-400)';
+                }
+            });
+        }
+        updateScore();
+    }
+
+    // ============================================================
+    // FUNGSI PERIKSA SEMUA
+    // ============================================================
+    function checkAllFormulas() {
+        for (let row = 1; row <= 5; row++) {
+            const operations = ['plus', 'minus', 'times', 'divide', 'pow'];
+            operations.forEach(op => {
+                const input = document.getElementById(`f${row}_${op}`);
+                if (input && input.value.trim() !== '') {
+                    checkFormula(row, op);
+                }
+            });
+        }
+        updateScore();
+    }
+
+    // ============================================================
+    // FUNGSI UPDATE SIDEBAR PROGRESS
+    // ============================================================
+    function updateSidebarProgress() {
+        const checkboxes = document.querySelectorAll('.check-list input[type="checkbox"]');
+        const checked = document.querySelectorAll('.check-list input[type="checkbox"]:checked');
+        const progress = checkboxes.length > 0 ? (checked.length / checkboxes.length) * 100 : 0;
+        document.getElementById('lessonProgress').textContent = `${Math.round(progress)}%`;
+        document.getElementById('lessonProgressBar').style.width = `${progress}%`;
+    }
+
+    // ============================================================
+    // EVENT LISTENER UNTUK CHECKBOX
+    // ============================================================
+    document.querySelectorAll('.check-list input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', updateSidebarProgress);
+    });
+
+    // ============================================================
+    // TOMBOL TANDAI SELESAI
+    // ============================================================
+    document.getElementById('completeLesson').addEventListener('click', function() {
+        const allChecked = document.querySelectorAll('.check-list input[type="checkbox"]');
+        allChecked.forEach(cb => cb.checked = true);
+        updateSidebarProgress();
+        this.innerHTML = '✅ Selesai! <span>✓</span>';
+        this.style.background = '#217346';
+        this.style.color = 'white';
+    });
+
+    // ============================================================
+    // INISIALISASI
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        updateScore();
+        updateSidebarProgress();
+    });
+    </script>
 </body>
 </html>
